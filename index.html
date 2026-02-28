@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrawWatch – Powerball &amp; Mega Millions Lottery Ticket Checker for Android</title>
+    <meta name="description" content="Scan and check your Powerball and Mega Millions lottery tickets instantly. Win alerts, live draw results, hot &amp; cold number statistics. Free Android app — no account required.">
+    <meta name="keywords" content="powerball ticket checker, mega millions checker, lottery ticket scanner, check lottery numbers, lottery results android, powerball app android, mega millions app android, lottery checker app">
+    <meta name="author" content="E4 Developers">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="DrawWatch – Powerball &amp; Mega Millions Lottery Ticket Checker">
+    <meta property="og:description" content="Scan &amp; check your Powerball and Mega Millions tickets. Win alerts, live results, hot &amp; cold numbers. Free Android app.">
+    <meta property="og:url" content="https://e4developers.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DrawWatch">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="DrawWatch – Lottery Ticket Checker for Android">
+    <meta name="twitter:description" content="Scan Powerball &amp; Mega Millions tickets. Win alerts, live results, hot numbers. Free.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://e4developers.github.io/">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "DrawWatch",
+      "alternateName": "DrawWatch: Lottery Checker",
+      "operatingSystem": "Android",
+      "applicationCategory": "UtilitiesApplication",
+      "description": "Scan and check your Powerball and Mega Millions lottery tickets instantly. Win alerts, live draw results, hot and cold number statistics. No account required.",
+      "url": "https://play.google.com/store/apps/details?id=com.numcheck.app",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.numcheck.app",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "E4 Developers",
+        "url": "https://e4developers.github.io/"
+      },
+      "keywords": "powerball ticket checker, mega millions checker, lottery ticket scanner, lottery results"
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg:      #0D0D1A;
+            --card:    #16162A;
+            --accent:  #C62828;
+            --gold:    #FFD54F;
+            --text:    #E8E8F0;
+            --muted:   #7A7A99;
+            --border:  #252545;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            background: linear-gradient(150deg, #1A0A30 0%, #120818 50%, #0D0D1A 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 72px 24px 60px;
+            text-align: center;
+        }
+
+        .app-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 88px;
+            height: 88px;
+            background: linear-gradient(135deg, #C62828 0%, #6A0000 100%);
+            border-radius: 22px;
+            font-size: 44px;
+            margin-bottom: 28px;
+            box-shadow: 0 12px 40px rgba(198, 40, 40, 0.45);
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 6vw, 3.4rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #FFFFFF 20%, #BBBBDD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--muted);
+            max-width: 580px;
+            margin: 0 auto 36px;
+        }
+
+        .hero-tagline strong { color: var(--text); }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #C62828 0%, #8B0000 100%);
+            color: #fff;
+            text-decoration: none;
+            padding: 17px 44px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            box-shadow: 0 8px 28px rgba(198, 40, 40, 0.45);
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(198, 40, 40, 0.55);
+        }
+
+        .cta-meta {
+            margin-top: 14px;
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+
+        /* ─── BIG 3 ─── */
+        .section { max-width: 1020px; margin: 0 auto; padding: 0 20px; }
+
+        .big3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 56px auto;
+            max-width: 1020px;
+            padding: 0 20px;
+        }
+
+        .big3-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .big3-card:hover { border-color: #444466; }
+
+        .big3-icon { font-size: 2.8rem; margin-bottom: 18px; }
+
+        .big3-card h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .big3-card p { color: var(--muted); font-size: 0.95rem; }
+
+        /* ─── FEATURES ─── */
+        .features-section { margin: 16px auto 60px; }
+
+        .section-label {
+            text-align: center;
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: var(--muted);
+            margin-bottom: 32px;
+            font-size: 0.95rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .feat {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 22px 20px;
+        }
+
+        .feat-icon { font-size: 1.6rem; margin-bottom: 10px; }
+
+        .feat h3 { font-size: 0.92rem; font-weight: 700; margin-bottom: 6px; }
+
+        .feat p { font-size: 0.83rem; color: var(--muted); }
+
+        /* ─── PRIVACY ─── */
+        .privacy-bar {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 44px 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .privacy-bar h2 { font-size: 1.35rem; margin-bottom: 12px; }
+        .privacy-bar p { color: var(--muted); max-width: 520px; margin: 0 auto; font-size: 0.95rem; }
+
+        /* ─── BOTTOM CTA ─── */
+        .bottom-cta {
+            text-align: center;
+            padding: 20px 20px 60px;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 36px 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.83rem;
+        }
+
+        footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 12px;
+            transition: color 0.2s;
+        }
+
+        footer a:hover { color: var(--text); }
+
+        footer .footer-links { margin-bottom: 12px; }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero">
+    <div class="app-icon">🎱</div>
+    <h1>DrawWatch</h1>
+    <p class="hero-sub">Powerball &amp; Mega Millions Lottery Ticket Checker</p>
+    <p class="hero-tagline">
+        The fastest way to check your <strong>Powerball</strong> and <strong>Mega Millions</strong>
+        lottery tickets on Android. Scan, check, and never miss a win.
+    </p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.numcheck.app"
+       rel="noopener" aria-label="Download DrawWatch on Google Play">
+        Download Free on Google Play
+    </a>
+    <p class="cta-meta">Free · Android · No account required</p>
+</header>
+
+<!-- ═══════════════ BIG 3 ═══════════════ -->
+<div class="big3" aria-label="Top features">
+    <div class="big3-card">
+        <div class="big3-icon">📷</div>
+        <h2>Scan Your Lottery Ticket</h2>
+        <p>Point your camera at any Powerball or Mega Millions ticket.
+           DrawWatch reads every play instantly — no typing required.</p>
+    </div>
+    <div class="big3-card">
+        <div class="big3-icon">🔔</div>
+        <h2>Win Alerts</h2>
+        <p>Get a push notification the moment any of your tickets wins —
+           even a free Quick Pick counts. Never miss a winning number.</p>
+    </div>
+    <div class="big3-card">
+        <div class="big3-icon">⚡</div>
+        <h2>Live Draw Results</h2>
+        <p>Powerball and Mega Millions results appear within 1–2 minutes of
+           each drawing. Auto-refreshes on draw nights — no manual action needed.</p>
+    </div>
+</div>
+
+<!-- ═══════════════ FEATURES GRID ═══════════════ -->
+<section class="section features-section" aria-label="All features">
+    <h2 class="section-label">Everything You Need to Play Smarter</h2>
+    <p class="section-desc">Check lottery tickets, track winnings, and pick better numbers — all in one free app.</p>
+
+    <div class="features-grid">
+        <div class="feat">
+            <div class="feat-icon">🎯</div>
+            <h3>Powerball Ticket Checker</h3>
+            <p>Enter or scan your Powerball numbers. Automatic matching against every draw, including Power Play prizes.</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">🌟</div>
+            <h3>Mega Millions Checker</h3>
+            <p>Full Mega Millions support with correct post-April 2025 multiplier rules and prize tables.</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">🔥</div>
+            <h3>Hot &amp; Cold Numbers</h3>
+            <p>See which Powerball and Mega Millions numbers hit most and least in the last 90 draws.</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">📊</div>
+            <h3>Frequency Heatmap</h3>
+            <p>Visual grid showing draw frequency for every ball number. Spot patterns at a glance.</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">🍀</div>
+            <h3>Lucky Picks</h3>
+            <p>Smart Quick Pick weighted by hot number data. Or generate picks from meaningful dates like birthdays.</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">💰</div>
+            <h3>Winnings &amp; ROI Tracker</h3>
+            <p>Total spent vs. total won. Full prize breakdown per ticket and per game.</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">📅</div>
+            <h3>Draw History</h3>
+            <p>Browse the last 90 Powerball and Mega Millions draws with full numbers, jackpot amounts, and prize tables.</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">🎫</div>
+            <h3>Multi-Play Groups</h3>
+            <p>Enter up to 10 lines as a single ticket. Power Play and Megaplier support with accurate cost tracking.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════ PRIVACY ═══════════════ -->
+<div class="privacy-bar">
+    <h2>🔒 Your Data Stays on Your Phone</h2>
+    <p>No account or sign-up required. All ticket numbers are stored locally on your device —
+       nothing is ever uploaded to a server. No ads tracking your numbers. No data collection.</p>
+</div>
+
+<!-- ═══════════════ BOTTOM CTA ═══════════════ -->
+<div class="bottom-cta">
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.numcheck.app"
+       rel="noopener" aria-label="Download DrawWatch on Google Play">
+        Download DrawWatch Free
+    </a>
+    <p class="cta-meta" style="margin-top:14px;">Android · Google Play · Free with ads</p>
+</div>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+    <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="https://play.google.com/store/apps/details?id=com.numcheck.app" rel="noopener">Google Play</a>
+    </div>
+    <p>&copy; 2026 E4 Developers. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
