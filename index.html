@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrawWatch – Powerball &amp; Mega Millions Lottery Ticket Checker for Android</title>
-    <meta name="description" content="Scan and check your Powerball and Mega Millions lottery tickets instantly. Win alerts, live draw results, hot &amp; cold number statistics. Free Android app — no account required.">
-    <meta name="keywords" content="powerball ticket checker, mega millions checker, lottery ticket scanner, check lottery numbers, lottery results android, powerball app android, mega millions app android, lottery checker app">
+    <title>DrawWatch – Powerball, Mega Millions &amp; Millionaire for Life Lottery Checker for Android</title>
+    <meta name="description" content="Scan and check Powerball, Mega Millions, and Millionaire for Life lottery tickets instantly. Win alerts, live draw results, hot &amp; cold number statistics. Free Android app — no account required.">
+    <meta name="keywords" content="powerball ticket checker, mega millions checker, millionaire for life lottery, lottery ticket scanner, check lottery numbers, lottery results android, powerball app android, mega millions app android, millionaire for life app, lottery checker app, nj lottery app">
     <meta name="author" content="E4 Developers">
     <meta name="robots" content="index, follow">
-    <meta name="robots" content="index, follow"><meta name="google-site-verification" content="H5CPbit4HnOmKxbe45nMqXhFQb_tYFMQeLm1g6-_eMU" />
-
+    <meta name="google-site-verification" content="H5CPbit4HnOmKxbe45nMqXhFQb_tYFMQeLm1g6-_eMU" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="DrawWatch – Powerball &amp; Mega Millions Lottery Ticket Checker">
-    <meta property="og:description" content="Scan &amp; check your Powerball and Mega Millions tickets. Win alerts, live results, hot &amp; cold numbers. Free Android app.">
+    <meta property="og:title" content="DrawWatch – Powerball, Mega Millions &amp; Millionaire for Life Checker">
+    <meta property="og:description" content="Scan &amp; check Powerball, Mega Millions, and Millionaire for Life tickets. Win alerts, live results, hot &amp; cold numbers. Free Android app.">
     <meta property="og:url" content="https://e4developers.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="DrawWatch">
@@ -21,7 +20,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="DrawWatch – Lottery Ticket Checker for Android">
-    <meta name="twitter:description" content="Scan Powerball &amp; Mega Millions tickets. Win alerts, live results, hot numbers. Free.">
+    <meta name="twitter:description" content="Scan Powerball, Mega Millions &amp; Millionaire for Life tickets. Win alerts, live results, hot numbers. Free.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://e4developers.github.io/">
@@ -35,7 +34,7 @@
       "alternateName": "DrawWatch: Lottery Checker",
       "operatingSystem": "Android",
       "applicationCategory": "UtilitiesApplication",
-      "description": "Scan and check your Powerball and Mega Millions lottery tickets instantly. Win alerts, live draw results, hot and cold number statistics. No account required.",
+      "description": "Scan and check your Powerball, Mega Millions, and Millionaire for Life lottery tickets instantly. Win alerts, live draw results, hot and cold number statistics. No account required.",
       "url": "https://play.google.com/store/apps/details?id=com.numcheck.app",
       "downloadUrl": "https://play.google.com/store/apps/details?id=com.numcheck.app",
       "offers": {
@@ -48,7 +47,7 @@
         "name": "E4 Developers",
         "url": "https://e4developers.github.io/"
       },
-      "keywords": "powerball ticket checker, mega millions checker, lottery ticket scanner, lottery results"
+      "keywords": "powerball ticket checker, mega millions checker, millionaire for life lottery, lottery ticket scanner, lottery results android"
     }
     </script>
 
@@ -101,23 +100,46 @@
         }
 
         .hero-sub {
-            font-size: 1.05rem;
+            font-size: 0.8rem;
             color: var(--gold);
             font-weight: 600;
             letter-spacing: 0.5px;
             margin-bottom: 18px;
             text-transform: uppercase;
-            font-size: 0.8rem;
         }
 
         .hero-tagline {
             font-size: clamp(1rem, 2.5vw, 1.2rem);
             color: var(--muted);
-            max-width: 580px;
-            margin: 0 auto 36px;
+            max-width: 620px;
+            margin: 0 auto 28px;
         }
 
         .hero-tagline strong { color: var(--text); }
+
+        .game-badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+
+        .game-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            border: 1px solid;
+        }
+
+        .badge-pb  { background: rgba(198,40,40,0.15);  border-color: rgba(198,40,40,0.4);  color: #EF9A9A; }
+        .badge-mm  { background: rgba(21,101,192,0.15); border-color: rgba(21,101,192,0.4); color: #90CAF9; }
+        .badge-mfl { background: rgba(46,125,50,0.15);  border-color: rgba(46,125,50,0.4);  color: #A5D6A7; }
 
         .cta-btn {
             display: inline-block;
@@ -144,9 +166,24 @@
             color: var(--muted);
         }
 
-        /* ─── BIG 3 ─── */
+        /* ─── SHARED ─── */
         .section { max-width: 1020px; margin: 0 auto; padding: 0 20px; }
 
+        .section-label {
+            text-align: center;
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: var(--muted);
+            margin-bottom: 32px;
+            font-size: 0.95rem;
+        }
+
+        /* ─── BIG 3 ─── */
         .big3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -177,22 +214,62 @@
 
         .big3-card p { color: var(--muted); font-size: 0.95rem; }
 
+        /* ─── GAMES SECTION ─── */
+        .games-section { margin: 0 auto 56px; }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .game-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px 24px;
+            transition: border-color 0.2s;
+        }
+
+        .game-card:hover { border-color: #444466; }
+
+        .game-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .game-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .dot-pb  { background: #C62828; box-shadow: 0 0 8px rgba(198,40,40,0.5); }
+        .dot-mm  { background: #1565C0; box-shadow: 0 0 8px rgba(21,101,192,0.5); }
+        .dot-mfl { background: #2E7D32; box-shadow: 0 0 8px rgba(46,125,50,0.5); }
+
+        .game-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .game-meta { display: flex; flex-direction: column; gap: 8px; }
+
+        .game-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.83rem;
+            gap: 8px;
+        }
+
+        .game-row-label { color: var(--muted); }
+        .game-row-val   { color: var(--text); font-weight: 600; text-align: right; }
+
         /* ─── FEATURES ─── */
         .features-section { margin: 16px auto 60px; }
-
-        .section-label {
-            text-align: center;
-            font-size: clamp(1.4rem, 3vw, 1.9rem);
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .section-desc {
-            text-align: center;
-            color: var(--muted);
-            margin-bottom: 32px;
-            font-size: 0.95rem;
-        }
 
         .features-grid {
             display: grid;
@@ -205,7 +282,10 @@
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 22px 20px;
+            transition: border-color 0.2s;
         }
+
+        .feat:hover { border-color: #444466; }
 
         .feat-icon { font-size: 1.6rem; margin-bottom: 10px; }
 
@@ -259,11 +339,17 @@
 <header class="hero">
     <img class="app-icon" src="ic_launcher.png" alt="DrawWatch app icon">
     <h1>DrawWatch</h1>
-    <p class="hero-sub">Powerball &amp; Mega Millions Lottery Ticket Checker</p>
+    <p class="hero-sub">Lottery Ticket Checker for Android</p>
     <p class="hero-tagline">
-        The fastest way to check your <strong>Powerball</strong> and <strong>Mega Millions</strong>
-        lottery tickets on Android. Scan, check, and never miss a win.
+        The fastest way to check your lottery tickets on Android.
+        Scan, check wins, and track every draw —
+        <strong>all three games, all in one place.</strong>
     </p>
+    <div class="game-badges">
+        <span class="game-badge badge-pb">● Powerball</span>
+        <span class="game-badge badge-mm">● Mega Millions</span>
+        <span class="game-badge badge-mfl">● Millionaire for Life</span>
+    </div>
     <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.numcheck.app"
        rel="noopener" aria-label="Download DrawWatch on Google Play">
         Download Free on Google Play
@@ -276,68 +362,157 @@
     <div class="big3-card">
         <div class="big3-icon">📷</div>
         <h2>Scan Your Lottery Ticket</h2>
-        <p>Point your camera at any Powerball or Mega Millions ticket.
+        <p>Point your camera at any Powerball, Mega Millions, or Millionaire for Life ticket.
            DrawWatch reads every play instantly — no typing required.</p>
     </div>
     <div class="big3-card">
         <div class="big3-icon">🔔</div>
         <h2>Win Alerts</h2>
         <p>Get a push notification the moment any of your tickets wins —
-           even a free Quick Pick counts. Never miss a winning number.</p>
+           even a free play counts. Never miss a winning ticket again.</p>
     </div>
     <div class="big3-card">
         <div class="big3-icon">⚡</div>
         <h2>Live Draw Results</h2>
-        <p>Powerball and Mega Millions results appear within 1–2 minutes of
-           each drawing. Auto-refreshes on draw nights — no manual action needed.</p>
+        <p>Results appear within 1–2 minutes of each drawing. Auto-refreshes on draw nights
+           so your tickets are always checked — no action needed.</p>
     </div>
 </div>
+
+<!-- ═══════════════ SUPPORTED GAMES ═══════════════ -->
+<section class="section games-section" aria-label="Supported games">
+    <h2 class="section-label">Three Games, One App</h2>
+    <p class="section-desc">Full support for every major draw game — including the daily Millionaire for Life.</p>
+
+    <div class="games-grid">
+        <div class="game-card">
+            <div class="game-card-header">
+                <div class="game-dot dot-pb"></div>
+                <h3>Powerball</h3>
+            </div>
+            <div class="game-meta">
+                <div class="game-row">
+                    <span class="game-row-label">Draws</span>
+                    <span class="game-row-val">Mon · Wed · Sat</span>
+                </div>
+                <div class="game-row">
+                    <span class="game-row-label">Format</span>
+                    <span class="game-row-val">5 of 69 + Powerball 1–26</span>
+                </div>
+                <div class="game-row">
+                    <span class="game-row-label">Ticket cost</span>
+                    <span class="game-row-val">$2 + optional $1 Power Play</span>
+                </div>
+            </div>
+        </div>
+        <div class="game-card">
+            <div class="game-card-header">
+                <div class="game-dot dot-mm"></div>
+                <h3>Mega Millions</h3>
+            </div>
+            <div class="game-meta">
+                <div class="game-row">
+                    <span class="game-row-label">Draws</span>
+                    <span class="game-row-val">Tue · Fri</span>
+                </div>
+                <div class="game-row">
+                    <span class="game-row-label">Format</span>
+                    <span class="game-row-val">5 of 70 + Mega Ball 1–24</span>
+                </div>
+                <div class="game-row">
+                    <span class="game-row-label">Ticket cost</span>
+                    <span class="game-row-val">$5 (2–10× Megaplier included)</span>
+                </div>
+            </div>
+        </div>
+        <div class="game-card">
+            <div class="game-card-header">
+                <div class="game-dot dot-mfl"></div>
+                <h3>Millionaire for Life</h3>
+            </div>
+            <div class="game-meta">
+                <div class="game-row">
+                    <span class="game-row-label">Draws</span>
+                    <span class="game-row-val">Every day</span>
+                </div>
+                <div class="game-row">
+                    <span class="game-row-label">Format</span>
+                    <span class="game-row-val">5 of 58 + Millionaire Ball 1–5</span>
+                </div>
+                <div class="game-row">
+                    <span class="game-row-label">Ticket cost</span>
+                    <span class="game-row-val">$5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- ═══════════════ FEATURES GRID ═══════════════ -->
 <section class="section features-section" aria-label="All features">
     <h2 class="section-label">Everything You Need to Play Smarter</h2>
-    <p class="section-desc">Check lottery tickets, track winnings, and pick better numbers — all in one free app.</p>
+    <p class="section-desc">Check tickets, track winnings, and pick better numbers — all in one free app.</p>
 
     <div class="features-grid">
         <div class="feat">
-            <div class="feat-icon">🎯</div>
-            <h3>Powerball Ticket Checker</h3>
-            <p>Enter or scan your Powerball numbers. Automatic matching against every draw, including Power Play prizes.</p>
+            <div class="feat-icon">📷</div>
+            <h3>OCR Ticket Scanner</h3>
+            <p>Scan any Powerball, Mega Millions, or Millionaire for Life ticket with your camera. Multi-pass parser handles common OCR misreads automatically.</p>
         </div>
         <div class="feat">
-            <div class="feat-icon">🌟</div>
-            <h3>Mega Millions Checker</h3>
-            <p>Full Mega Millions support with correct post-April 2025 multiplier rules and prize tables.</p>
+            <div class="feat-icon">🏆</div>
+            <h3>Instant Win Detection</h3>
+            <p>Checks every eligible draw against every saved ticket. Correct prize tables for all three games, including Power Play and Megaplier math.</p>
         </div>
         <div class="feat">
             <div class="feat-icon">🔥</div>
             <h3>Hot &amp; Cold Numbers</h3>
-            <p>See which Powerball and Mega Millions numbers hit most and least in the last 90 draws.</p>
+            <p>See which numbers appear most and least in the last 90 draws. Per-game stats for Powerball, Mega Millions, and Millionaire for Life.</p>
         </div>
         <div class="feat">
             <div class="feat-icon">📊</div>
             <h3>Frequency Heatmap</h3>
-            <p>Visual grid showing draw frequency for every ball number. Spot patterns at a glance.</p>
+            <p>Visual grid showing draw frequency for every ball number. Spot trends across 90 draws at a glance.</p>
         </div>
         <div class="feat">
             <div class="feat-icon">🍀</div>
             <h3>Lucky Picks</h3>
-            <p>Smart Quick Pick weighted by hot number data. Or generate picks from meaningful dates like birthdays.</p>
+            <p>Generate Quick Picks weighted by historical frequency data. One tap sends the numbers straight into a new ticket.</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">🎂</div>
+            <h3>Birthday Lucky Picks</h3>
+            <p>Generate picks from birthdays in your contacts. A fun way to play meaningful numbers — regenerate any time.</p>
         </div>
         <div class="feat">
             <div class="feat-icon">💰</div>
             <h3>Winnings &amp; ROI Tracker</h3>
-            <p>Total spent vs. total won. Full prize breakdown per ticket and per game.</p>
+            <p>Total spent vs. total won with full prize breakdowns per ticket and per game. Know your real return at a glance.</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">📈</div>
+            <h3>My Numbers</h3>
+            <p>Track how often your personal picks appear in draws. Discover which of your numbers are running hot — and which aren't.</p>
         </div>
         <div class="feat">
             <div class="feat-icon">📅</div>
             <h3>Draw History</h3>
-            <p>Browse the last 90 Powerball and Mega Millions draws with full numbers, jackpot amounts, and prize tables.</p>
+            <p>Browse the last 90 draws for all three games with full numbers, jackpot amounts, and complete prize tables.</p>
         </div>
         <div class="feat">
             <div class="feat-icon">🎫</div>
             <h3>Multi-Play Groups</h3>
-            <p>Enter up to 10 lines as a single ticket. Power Play and Megaplier support with accurate cost tracking.</p>
+            <p>Enter up to 10 lines as a single ticket. Power Play and Megaplier support with accurate cost and prize tracking.</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">🚨</div>
+            <h3>Jackpot Alert Banner</h3>
+            <p>Set a jackpot threshold for Powerball or Mega Millions. An in-app alert appears the moment the jackpot crosses your target.</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">⏰</div>
+            <h3>Draw Reminders</h3>
+            <p>Optional morning notifications remind you to check your tickets the day after each draw — so nothing slips by.</p>
         </div>
     </div>
 </section>
