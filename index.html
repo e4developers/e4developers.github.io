@@ -3,585 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrawWatch – Powerball, Mega Millions, Millionaire for Life &amp; Lotto America Lottery Checker for Android</title>
-    <meta name="description" content="Scan and check Powerball, Mega Millions, Millionaire for Life, and Lotto America lottery tickets instantly. Win alerts, live draw results, hot &amp; cold number statistics. Free Android app. No account required.">
-    <meta name="keywords" content="powerball ticket checker, mega millions checker, millionaire for life lottery, lotto america checker, lottery ticket scanner, check lottery numbers, lottery results android, powerball app android, mega millions app android, millionaire for life app, lotto america app, lottery checker app, nj lottery app">
+    <title>E4 Developers</title>
+    <meta name="description" content="Explore E4 Developers apps: DrawWatch and DrawSight.">
     <meta name="author" content="E4 Developers">
     <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="H5CPbit4HnOmKxbe45nMqXhFQb_tYFMQeLm1g6-_eMU" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="DrawWatch – Powerball, Mega Millions, Millionaire for Life &amp; Lotto America Checker">
-    <meta property="og:description" content="Scan &amp; check Powerball, Mega Millions, Millionaire for Life, and Lotto America tickets. Win alerts, live results, hot &amp; cold numbers. Free Android app.">
-    <meta property="og:url" content="https://e4developers.github.io/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="DrawWatch">
-    <meta property="og:image" content="https://e4developers.github.io/ic_launcher.png">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="DrawWatch – Lottery Ticket Checker for Android">
-    <meta name="twitter:description" content="Scan Powerball, Mega Millions, Millionaire for Life &amp; Lotto America tickets. Win alerts, live results, hot numbers. Free.">
-
-    <!-- Canonical -->
+    <meta name="google-site-verification" content="H5CPbit4HnOmKxbe45nMqXhFQb_tYFMQeLm1g6-_eMU">
     <link rel="canonical" href="https://e4developers.github.io/">
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "DrawWatch",
-      "alternateName": "DrawWatch: Lottery Checker",
-      "operatingSystem": "Android",
-      "applicationCategory": "UtilitiesApplication",
-      "description": "Scan and check your Powerball, Mega Millions, Millionaire for Life, and Lotto America lottery tickets instantly. Win alerts, live draw results, hot and cold number statistics. No account required.",
-      "url": "https://play.google.com/store/apps/details?id=com.numcheck.app",
-      "downloadUrl": "https://play.google.com/store/apps/details?id=com.numcheck.app",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "author": {
-        "@type": "Organization",
-        "name": "E4 Developers",
-        "url": "https://e4developers.github.io/"
-      },
-      "keywords": "powerball ticket checker, mega millions checker, millionaire for life lottery, lotto america checker, lottery ticket scanner, lottery results android"
-    }
-    </script>
-
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         :root {
-            --bg:      #0D0D1A;
-            --card:    #16162A;
-            --accent:  #C62828;
-            --gold:    #FFD54F;
-            --text:    #E8E8F0;
-            --muted:   #7A7A99;
-            --border:  #252545;
+            --bg: #f3efe8;
+            --bg-soft: #fcf9f5;
+            --surface: rgba(255, 252, 247, 0.88);
+            --text: #1f2933;
+            --muted: #5f6a77;
+            --line: rgba(31, 41, 51, 0.12);
+            --shadow: 0 24px 56px rgba(31, 41, 51, 0.08);
+            --radius-lg: 28px;
+            --radius-md: 20px;
+            --max: 1180px;
+            --dw-bg: linear-gradient(155deg, #170b2c 0%, #0f0817 48%, #0a0a14 100%);
+            --dw-border: rgba(255, 213, 79, 0.16);
+            --dw-text: #ececf5;
+            --dw-muted: #a8a8c0;
+            --dw-accent: #c62828;
+            --dw-gold: #ffd54f;
+            --ds-bg: linear-gradient(160deg, #f6f0e6 0%, #efe2cf 55%, #e8dccb 100%);
+            --ds-border: rgba(13, 105, 117, 0.12);
+            --ds-text: #1f2933;
+            --ds-muted: #5f6a77;
+            --ds-accent: #0d6975;
+            --ds-warm: #9a6332;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: var(--bg);
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top left, rgba(13, 105, 117, 0.1), transparent 28%),
+                radial-gradient(circle at top right, rgba(154, 99, 50, 0.1), transparent 24%),
+                linear-gradient(180deg, var(--bg-soft), var(--bg));
             color: var(--text);
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.65;
         }
 
-        /* ─── HERO ─── */
-        .hero {
-            background: linear-gradient(150deg, #1A0A30 0%, #120818 50%, #0D0D1A 100%);
-            border-bottom: 1px solid var(--border);
-            padding: 72px 24px 60px;
-            text-align: center;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        .app-icon {
-            display: inline-block;
-            width: 96px;
-            height: 96px;
-            border-radius: 22px;
-            margin-bottom: 28px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        .shell {
+            width: min(var(--max), calc(100% - 32px));
+            margin: 0 auto;
+            padding: 30px 0 60px;
         }
 
-        h1 {
-            font-size: clamp(2.2rem, 6vw, 3.4rem);
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #FFFFFF 20%, #BBBBDD 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 24px;
         }
 
-        .hero-sub {
-            font-size: 0.8rem;
-            color: var(--gold);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            margin-bottom: 18px;
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: "Avenir Next Condensed", "Avenir Next", "Segoe UI", sans-serif;
+            font-size: 1.08rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
         }
 
-        .hero-tagline {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            color: var(--muted);
-            max-width: 620px;
-            margin: 0 auto 28px;
+        .brand-mark {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0d6975, #9a6332);
+            box-shadow: 0 0 0 8px rgba(13, 105, 117, 0.08);
         }
 
-        .hero-tagline strong { color: var(--text); }
-
-        .game-badges {
+        .nav-links {
             display: flex;
-            gap: 10px;
-            justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 36px;
+            gap: 10px;
         }
 
-        .game-badge {
+        .nav-link {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 6px 16px;
-            border-radius: 50px;
+            justify-content: center;
+            padding: 10px 14px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.56);
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .hero {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(14px);
+            padding: 36px;
+            margin-bottom: 24px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            margin-bottom: 14px;
+            color: #9a6332;
             font-size: 0.8rem;
             font-weight: 700;
-            letter-spacing: 0.3px;
-            border: 1px solid;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
         }
 
-        .badge-pb  { background: rgba(198,40,40,0.15);  border-color: rgba(198,40,40,0.4);  color: #EF9A9A; }
-        .badge-mm  { background: rgba(21,101,192,0.15); border-color: rgba(21,101,192,0.4); color: #90CAF9; }
-        .badge-mfl { background: rgba(46,125,50,0.15);  border-color: rgba(46,125,50,0.4);  color: #A5D6A7; }
-        .badge-la  { background: rgba(123,31,162,0.15); border-color: rgba(123,31,162,0.4); color: #CE93D8; }
-
-        .cta-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #C62828 0%, #8B0000 100%);
-            color: #fff;
-            text-decoration: none;
-            padding: 17px 44px;
-            border-radius: 50px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: 0.2px;
-            box-shadow: 0 8px 28px rgba(198, 40, 40, 0.45);
-            transition: transform 0.18s, box-shadow 0.18s;
+        h1 {
+            margin-bottom: 14px;
+            font-family: "Avenir Next Condensed", "Avenir Next", "Segoe UI", sans-serif;
+            font-size: clamp(2.6rem, 6vw, 4.4rem);
+            line-height: 0.92;
+            letter-spacing: -0.04em;
         }
 
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 36px rgba(198, 40, 40, 0.55);
-        }
-
-        .cta-meta {
-            margin-top: 14px;
-            font-size: 0.82rem;
+        .hero p {
+            max-width: 64ch;
             color: var(--muted);
+            font-size: 1.04rem;
         }
 
-        /* ─── SHARED ─── */
-        .section { max-width: 1020px; margin: 0 auto; padding: 0 20px; }
-
-        .section-label {
-            text-align: center;
-            font-size: clamp(1.4rem, 3vw, 1.9rem);
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .section-desc {
-            text-align: center;
-            color: var(--muted);
-            margin-bottom: 32px;
-            font-size: 0.95rem;
-        }
-
-        /* ─── BIG 3 ─── */
-        .big3 {
+        .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 56px auto;
-            max-width: 1020px;
-            padding: 0 20px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 24px;
         }
 
-        .big3-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 36px 28px;
-            text-align: center;
-            transition: border-color 0.2s;
+        .app-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            padding: 28px;
+            min-height: 360px;
         }
 
-        .big3-card:hover { border-color: #444466; }
-
-        .big3-icon { font-size: 2.8rem; margin-bottom: 18px; }
-
-        .big3-card h2 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 10px;
+        .draw-watch {
+            background: var(--dw-bg);
+            border: 1px solid var(--dw-border);
+            color: var(--dw-text);
         }
 
-        .big3-card p { color: var(--muted); font-size: 0.95rem; }
-
-        /* ─── GAMES SECTION ─── */
-        .games-section { margin: 0 auto 56px; }
-
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
+        .draw-sight {
+            background: var(--ds-bg);
+            border: 1px solid var(--ds-border);
+            color: var(--ds-text);
         }
 
-        .game-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 28px 24px;
-            transition: border-color 0.2s;
-        }
-
-        .game-card:hover { border-color: #444466; }
-
-        .game-card-header {
+        .app-top {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             margin-bottom: 18px;
         }
 
-        .game-dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            flex-shrink: 0;
+        .dw-icon {
+            width: 78px;
+            height: 78px;
+            border-radius: 18px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
         }
 
-        .dot-pb  { background: #C62828; box-shadow: 0 0 8px rgba(198,40,40,0.5); }
-        .dot-mm  { background: #1565C0; box-shadow: 0 0 8px rgba(21,101,192,0.5); }
-        .dot-mfl { background: #2E7D32; box-shadow: 0 0 8px rgba(46,125,50,0.5); }
-        .dot-la  { background: #7B1FA2; box-shadow: 0 0 8px rgba(123,31,162,0.5); }
+        .ds-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 78px;
+            height: 78px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #0d6975 0%, #9a6332 100%);
+            color: #fff;
+            font-family: "Avenir Next Condensed", "Avenir Next", "Segoe UI", sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            box-shadow: 0 12px 30px rgba(13, 105, 117, 0.22);
+        }
 
-        .game-card h3 {
-            font-size: 1rem;
+        .app-label {
+            font-size: 0.78rem;
             font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
-        .game-meta { display: flex; flex-direction: column; gap: 8px; }
+        .draw-watch .app-label {
+            color: var(--dw-gold);
+        }
 
-        .game-row {
+        .draw-sight .app-label {
+            color: var(--ds-warm);
+        }
+
+        .app-card h2 {
+            font-size: 1.9rem;
+            margin-bottom: 8px;
+        }
+
+        .app-tagline {
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .draw-watch .app-tagline,
+        .draw-watch li {
+            color: var(--dw-muted);
+        }
+
+        .draw-sight .app-tagline,
+        .draw-sight li {
+            color: var(--ds-muted);
+        }
+
+        .feature-list {
+            padding-left: 18px;
+            margin-bottom: 22px;
+        }
+
+        .feature-list li + li {
+            margin-top: 8px;
+        }
+
+        .button-row {
             display: flex;
-            justify-content: space-between;
-            font-size: 0.83rem;
-            gap: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .game-row-label { color: var(--muted); }
-        .game-row-val   { color: var(--text); font-weight: 600; text-align: right; }
-
-        /* ─── FEATURES ─── */
-        .features-section { margin: 16px auto 60px; }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 14px;
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            border: 1px solid transparent;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
         }
 
-        .feat {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 22px 20px;
-            transition: border-color 0.2s;
+        .btn:hover {
+            transform: translateY(-2px);
         }
 
-        .feat:hover { border-color: #444466; }
-
-        .feat-icon { font-size: 1.6rem; margin-bottom: 10px; }
-
-        .feat h3 { font-size: 0.92rem; font-weight: 700; margin-bottom: 6px; }
-
-        .feat p { font-size: 0.83rem; color: var(--muted); }
-
-        /* ─── PRIVACY ─── */
-        .privacy-bar {
-            background: var(--card);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 44px 20px;
-            text-align: center;
-            margin: 40px 0;
+        .draw-watch .btn-primary {
+            background: linear-gradient(135deg, #c62828 0%, #8b0000 100%);
+            color: #fff;
+            box-shadow: 0 10px 24px rgba(198, 40, 40, 0.24);
         }
 
-        .privacy-bar h2 { font-size: 1.35rem; margin-bottom: 12px; }
-        .privacy-bar p { color: var(--muted); max-width: 520px; margin: 0 auto; font-size: 0.95rem; }
-
-        /* ─── BOTTOM CTA ─── */
-        .bottom-cta {
-            text-align: center;
-            padding: 20px 20px 60px;
+        .draw-watch .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.12);
+            color: var(--dw-text);
         }
 
-        /* ─── FOOTER ─── */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 36px 20px;
-            text-align: center;
+        .draw-sight .btn-primary {
+            background: linear-gradient(135deg, #0d6975 0%, #094b53 100%);
+            color: #fff;
+            box-shadow: 0 10px 24px rgba(13, 105, 117, 0.18);
+        }
+
+        .draw-sight .btn-secondary {
+            background: rgba(255, 255, 255, 0.64);
+            border-color: rgba(31, 41, 51, 0.12);
+            color: var(--ds-text);
+        }
+
+        .footer-note {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow);
+            padding: 22px;
             color: var(--muted);
-            font-size: 0.83rem;
+            text-align: center;
         }
 
-        footer a {
-            color: var(--muted);
-            text-decoration: none;
-            margin: 0 12px;
-            transition: color 0.2s;
+        @media (max-width: 900px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
         }
 
-        footer a:hover { color: var(--text); }
+        @media (max-width: 640px) {
+            .shell {
+                width: min(var(--max), calc(100% - 20px));
+                padding-top: 20px;
+            }
 
-        footer .footer-links { margin-bottom: 12px; }
+            .hero,
+            .app-card {
+                padding: 22px;
+            }
+
+            .app-top {
+                align-items: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="shell">
+        <nav class="nav" aria-label="Primary">
+            <div class="brand">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span>E4 Developers</span>
+            </div>
+            <div class="nav-links">
+                <a class="nav-link" href="https://e4developers.github.io/DrawWatch/">DrawWatch</a>
+                <a class="nav-link" href="https://e4developers.github.io/DrawSight/">DrawSight</a>
+            </div>
+        </nav>
 
-<!-- ═══════════════ HERO ═══════════════ -->
-<header class="hero">
-    <img class="app-icon" src="ic_launcher.png" alt="DrawWatch app icon">
-    <h1>DrawWatch</h1>
-    <p class="hero-sub">Lottery Ticket Checker for Android</p>
-    <p class="hero-tagline">
-        The fastest way to check your lottery tickets on Android.
-        Scan, check wins, and track every draw.
-        <strong>All four games, all in one place.</strong>
-    </p>
-    <div class="game-badges">
-        <span class="game-badge badge-pb">● Powerball</span>
-        <span class="game-badge badge-mm">● Mega Millions</span>
-        <span class="game-badge badge-mfl">● Millionaire for Life</span>
-        <span class="game-badge badge-la">● Lotto America</span>
-    </div>
-    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.numcheck.app"
-       rel="noopener" aria-label="Download DrawWatch on Google Play">
-        Download Free on Google Play
-    </a>
-    <p class="cta-meta">Free · Android · No account required</p>
-</header>
+        <section class="hero">
+            <div class="eyebrow">App Hub</div>
+            <h1>Two products, two very different workflows.</h1>
+            <p>
+                E4 Developers is currently shipping two focused mobile products: DrawWatch for lottery ticket checking
+                and DrawSight for AI-first inspection reporting. Choose the product you want below to open its dedicated site.
+            </p>
+        </section>
 
-<!-- ═══════════════ BIG 3 ═══════════════ -->
-<div class="big3" aria-label="Top features">
-    <div class="big3-card">
-        <div class="big3-icon">📷</div>
-        <h2>Scan Your Lottery Ticket</h2>
-        <p>Point your camera at any lottery ticket and DrawWatch reads your numbers instantly.
-           Works with Powerball, Mega Millions, Millionaire for Life, and Lotto America. No typing required.</p>
-    </div>
-    <div class="big3-card">
-        <div class="big3-icon">🔔</div>
-        <h2>Win Alerts — Even When Closed</h2>
-        <p>DrawWatch checks your tickets in the background every few hours, even when the app is closed.
-           The moment a win is found, you get a notification. Even a free play counts.</p>
-    </div>
-    <div class="big3-card">
-        <div class="big3-icon">⚡</div>
-        <h2>Live Draw Results</h2>
-        <p>Results appear within 1–2 minutes of each drawing. Auto-refreshes on draw nights
-           so your tickets are always checked. No action needed.</p>
-    </div>
-</div>
+        <section class="cards" aria-label="Products">
+            <article class="app-card draw-watch">
+                <div class="app-top">
+                    <img class="dw-icon" src="ic_launcher.png" alt="DrawWatch app icon">
+                    <div>
+                        <div class="app-label">Android Lottery App</div>
+                        <h2>DrawWatch</h2>
+                        <p class="app-tagline">Track tickets, scan numbers, and know immediately when you hit something.</p>
+                    </div>
+                </div>
+                <ul class="feature-list">
+                    <li>Powerball, Mega Millions, Millionaire for Life, and Lotto America support</li>
+                    <li>scan and check tickets fast with notifications, stats, and reminders</li>
+                    <li>free Android app with a dedicated public site and legal pages</li>
+                </ul>
+                <div class="button-row">
+                    <a class="btn btn-primary" href="https://e4developers.github.io/DrawWatch/">Open DrawWatch</a>
+                    <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.numcheck.app" rel="noopener">Google Play</a>
+                </div>
+            </article>
 
-<!-- ═══════════════ SUPPORTED GAMES ═══════════════ -->
-<section class="section games-section" aria-label="Supported games">
-    <h2 class="section-label">Four Games, One App</h2>
-    <p class="section-desc">Full support for every major draw game, including the daily Millionaire for Life and Lotto America.</p>
+            <article class="app-card draw-sight">
+                <div class="app-top">
+                    <div class="ds-icon" aria-hidden="true">DS</div>
+                    <div>
+                        <div class="app-label">Inspection Workflow App</div>
+                        <h2>DrawSight</h2>
+                        <p class="app-tagline">Photo-first inspection reporting with AI-assisted drafting and field-first review.</p>
+                    </div>
+                </div>
+                <ul class="feature-list">
+                    <li>built for solo inspectors who want faster photo-to-report workflows</li>
+                    <li>local-first handling of reports, exports, backups, and on-site review</li>
+                    <li>dedicated public privacy and terms pages alongside the product site</li>
+                </ul>
+                <div class="button-row">
+                    <a class="btn btn-primary" href="https://e4developers.github.io/DrawSight/">Open DrawSight</a>
+                    <a class="btn btn-secondary" href="https://e4developers.github.io/DrawSight/privacy-policy.html">Privacy Policy</a>
+                </div>
+            </article>
+        </section>
 
-    <div class="games-grid">
-        <div class="game-card">
-            <div class="game-card-header">
-                <div class="game-dot dot-pb"></div>
-                <h3>Powerball</h3>
-            </div>
-            <div class="game-meta">
-                <div class="game-row">
-                    <span class="game-row-label">Draws</span>
-                    <span class="game-row-val">Mon · Wed · Sat</span>
-                </div>
-                <div class="game-row">
-                    <span class="game-row-label">Format</span>
-                    <span class="game-row-val">5 of 69 + Powerball 1–26</span>
-                </div>
-                <div class="game-row">
-                    <span class="game-row-label">Ticket cost</span>
-                    <span class="game-row-val">$2 + optional $1 Power Play</span>
-                </div>
-            </div>
-        </div>
-        <div class="game-card">
-            <div class="game-card-header">
-                <div class="game-dot dot-mm"></div>
-                <h3>Mega Millions</h3>
-            </div>
-            <div class="game-meta">
-                <div class="game-row">
-                    <span class="game-row-label">Draws</span>
-                    <span class="game-row-val">Tue · Fri</span>
-                </div>
-                <div class="game-row">
-                    <span class="game-row-label">Format</span>
-                    <span class="game-row-val">5 of 70 + Mega Ball 1–24</span>
-                </div>
-                <div class="game-row">
-                    <span class="game-row-label">Ticket cost</span>
-                    <span class="game-row-val">$5 (2–10× Megaplier included)</span>
-                </div>
-            </div>
-        </div>
-        <div class="game-card">
-            <div class="game-card-header">
-                <div class="game-dot dot-mfl"></div>
-                <h3>Millionaire for Life</h3>
-            </div>
-            <div class="game-meta">
-                <div class="game-row">
-                    <span class="game-row-label">Draws</span>
-                    <span class="game-row-val">Every day</span>
-                </div>
-                <div class="game-row">
-                    <span class="game-row-label">Format</span>
-                    <span class="game-row-val">5 of 58 + Millionaire Ball 1–5</span>
-                </div>
-                <div class="game-row">
-                    <span class="game-row-label">Ticket cost</span>
-                    <span class="game-row-val">$5</span>
-                </div>
-            </div>
-        </div>
-        <div class="game-card">
-            <div class="game-card-header">
-                <div class="game-dot dot-la"></div>
-                <h3>Lotto America</h3>
-            </div>
-            <div class="game-meta">
-                <div class="game-row">
-                    <span class="game-row-label">Draws</span>
-                    <span class="game-row-val">Mon · Wed · Sat</span>
-                </div>
-                <div class="game-row">
-                    <span class="game-row-label">Format</span>
-                    <span class="game-row-val">5 of 52 + Star Ball 1–10</span>
-                </div>
-                <div class="game-row">
-                    <span class="game-row-label">Ticket cost</span>
-                    <span class="game-row-val">$1 + optional $1 All Star Bonus</span>
-                </div>
-            </div>
+        <div class="footer-note">
+            Each product has its own dedicated project site. Existing DrawWatch legal links are preserved through redirects
+            on this root domain so older app-store links do not break.
         </div>
     </div>
-</section>
-
-<!-- ═══════════════ FEATURES GRID ═══════════════ -->
-<section class="section features-section" aria-label="All features">
-    <h2 class="section-label">Everything You Need to Play Smarter</h2>
-    <p class="section-desc">Check tickets, track winnings, and pick better numbers. All in one free app.</p>
-
-    <div class="features-grid">
-        <div class="feat">
-            <div class="feat-icon">📷</div>
-            <h3>Ticket Scanner</h3>
-            <p>Scan any lottery ticket with your camera and DrawWatch fills in your numbers automatically. Handles blurry scans and tricky ticket layouts without you having to fix anything.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">🏆</div>
-            <h3>Instant Win Detection</h3>
-            <p>Every draw is automatically checked against all your saved tickets. Prize amounts are calculated correctly for all four games, including Power Play, Megaplier, and All Star Bonus multipliers.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">🔥</div>
-            <h3>Hot &amp; Cold Numbers</h3>
-            <p>See which numbers appear most and least in the last 90 draws. Per-game stats for all four games.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">📊</div>
-            <h3>Number Frequency Chart</h3>
-            <p>See how often every ball number has been drawn across the last 90 draws. Great for spotting which numbers are overdue.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">🍀</div>
-            <h3>Lucky Picks</h3>
-            <p>Get number suggestions based on what has been drawn most often lately. Smarter than a random pick, and one tap adds them straight to a new ticket.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">🎂</div>
-            <h3>Birthday Lucky Picks</h3>
-            <p>Generate picks from birthdays in your contacts. A fun way to play meaningful numbers. Regenerate any time.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">💰</div>
-            <h3>Winnings Tracker</h3>
-            <p>See exactly how much you have spent and how much you have won, broken down by ticket and by game. Know where you stand at a glance.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">📈</div>
-            <h3>My Numbers</h3>
-            <p>Track how often your personal picks appear in draws. Discover which of your numbers are running hot and which ones aren't.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">📅</div>
-            <h3>Draw History</h3>
-            <p>Browse the last 90 draws for all four games. See the winning numbers and jackpot amount for every past draw.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">👥</div>
-            <h3>Group Pools</h3>
-            <p>Split tickets with friends or coworkers. Track every member's share, see per-person winnings, and view the full draw-by-draw history for each pool.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">⭐</div>
-            <h3>Favorite Numbers</h3>
-            <p>Save named sets of lucky numbers and play them any time. One tap fills in a new ticket so you never have to re-enter the same numbers every week.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">🚨</div>
-            <h3>Jackpot Alerts</h3>
-            <p>Set a jackpot amount for Powerball, Mega Millions, or Lotto America. You will get an alert the moment any jackpot hits your target.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">⏰</div>
-            <h3>Draw Reminders</h3>
-            <p>Get notified at 11:30 PM on draw nights, right when results are posted. Choose which games to get reminders for so you only hear about the ones you play.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">📡</div>
-            <h3>Results the Second They Drop</h3>
-            <p>The moment draw numbers are posted, you get a notification even if the app is closed. No waiting, no refreshing, no checking back later.</p>
-        </div>
-        <div class="feat">
-            <div class="feat-icon">🔄</div>
-            <h3>Background Win Checks</h3>
-            <p>DrawWatch runs automatically in the background every few hours. It fetches the latest draw results, checks all your tickets, and sends a win notification if anything matched. No need to open the app.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════ PRIVACY ═══════════════ -->
-<div class="privacy-bar">
-    <h2>🔒 Your Tickets Stay on Your Phone</h2>
-    <p>No account or sign-up required. Your ticket numbers are stored on your device and never
-       uploaded. We collect basic usage info to fix bugs and make the app better,
-       but your picks stay yours. No ads tracking your numbers.</p>
-</div>
-
-<!-- ═══════════════ BOTTOM CTA ═══════════════ -->
-<div class="bottom-cta">
-    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.numcheck.app"
-       rel="noopener" aria-label="Download DrawWatch on Google Play">
-        Download DrawWatch Free
-    </a>
-    <p class="cta-meta" style="margin-top:14px;">Android · Google Play · Free with ads</p>
-</div>
-
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer>
-    <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-of-service.html">Terms of Service</a>
-        <a href="https://play.google.com/store/apps/details?id=com.numcheck.app" rel="noopener">Google Play</a>
-    </div>
-    <p>&copy; 2026 E4 Developers. All rights reserved.</p>
-</footer>
-
 </body>
 </html>
