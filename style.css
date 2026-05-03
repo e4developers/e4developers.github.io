@@ -812,10 +812,32 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); }
 @media (max-width: 640px) {
   .shell { padding: 20px 0 60px; }
   .nav { padding: 10px 14px; }
-  .studio-hero { padding: 32px 0 16px; }
-  .product-card { padding: 26px; }
+  .nav-links { gap: 2px; }
+  .nav-links a { padding: 6px 10px; font-size: 0.86rem; }
+  .studio-hero { padding: 24px 0 8px; }
+  .studio-hero .eyebrow { font-size: 0.68rem; padding: 3px 10px; margin-bottom: 12px; }
+  .studio-hero h1 {
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
+    line-height: 1.08;
+    max-width: 18ch;
+    margin-bottom: 14px;
+  }
+  .studio-hero p.lede {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    padding: 0 4px;
+  }
+  .product-grid { margin-top: 28px; gap: 14px; }
+  .product-card { padding: 22px; border-radius: var(--radius-lg); }
+  .product-card .product-icon { width: 48px; height: 48px; border-radius: 12px; }
+  .product-card .product-name { font-size: 1.22rem; }
+  .product-card .product-tagline { font-size: 0.94rem; }
+  .product-card ul li { font-size: 0.9rem; padding: 7px 0; }
+  .studio-about { margin-top: 40px; padding: 26px 22px; }
+  .studio-about h2 { font-size: 1.3rem; }
+  .studio-about p { font-size: 0.95rem; }
   .dw-hero { padding: 40px 18px 36px; }
-  .footer { grid-template-columns: 1fr; }
+  .footer { grid-template-columns: 1fr; gap: 24px; margin-top: 56px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001s !important; transition-duration: 0.001s !important; }
