@@ -3,18 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DrawWatch: lottery ticket checker for Powerball, Mega Millions, Lotto America and Millionaire for Life</title>
-<meta name="description" content="Scan a Powerball, Mega Millions, Lotto America or Millionaire for Life ticket. DrawWatch checks it against every draw and shows what each line won. Free Android app, no account.">
+<title>DrawWatch: scan your lottery ticket and see what it won</title>
+<meta name="description" content="Scan a Powerball, Mega Millions, Lotto America or Millionaire for Life ticket. DrawWatch checks it against every draw it's in and shows what each line won. Free for Android, no account.">
 <meta name="author" content="E4 Developers">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0C0D0F">
-<meta property="og:title" content="DrawWatch: lottery ticket checker">
-<meta property="og:description" content="Scan your ticket. DrawWatch checks every draw and shows what each line won.">
+<meta property="og:title" content="DrawWatch: did your ticket win?">
+<meta property="og:description" content="Scan your lottery ticket. DrawWatch checks every draw it's in and shows what each line won.">
 <meta property="og:url" content="https://e4developers.github.io/drawwatch.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DrawWatch">
-<meta property="og:image" content="https://e4developers.github.io/img/drawwatch/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://e4developers.github.io/img/drawwatch/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://e4developers.github.io/img/drawwatch/og.png">
 <link rel="canonical" href="https://e4developers.github.io/drawwatch.html">
 <link rel="icon" type="image/png" href="img/drawwatch/icon-192.png">
 <link rel="apple-touch-icon" href="img/drawwatch/icon-192.png">
@@ -22,112 +25,216 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Unbounded:wght@700&display=swap">
 <link rel="stylesheet" href="drawwatch.css">
+<link rel="preload" as="image" href="img/drawwatch/phone-tickets.webp">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "MobileApplication",
   "name": "DrawWatch: Lottery Checker",
   "operatingSystem": "Android",
   "applicationCategory": "EntertainmentApplication",
-  "description": "Scan a Powerball, Mega Millions, Lotto America or Millionaire for Life ticket. DrawWatch checks it against every draw and shows what each line won.",
+  "description": "Scan a Powerball, Mega Millions, Lotto America or Millionaire for Life ticket. DrawWatch checks it against every draw it's in and shows what each line won.",
   "url": "https://e4developers.github.io/drawwatch.html",
   "downloadUrl": "https://play.google.com/store/apps/details?id=com.numcheck.app",
+  "image": "https://e4developers.github.io/img/drawwatch/icon-512.png",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "E4 Developers", "url": "https://e4developers.github.io/" }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is DrawWatch free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. DrawWatch is free and shows ads. There's no account and no sign-up." } },
+    { "@type": "Question", "name": "Can I buy lottery tickets in DrawWatch?", "acceptedAnswer": { "@type": "Answer", "text": "No. DrawWatch only checks tickets you already bought from a lottery retailer. It doesn't sell tickets or take bets." } },
+    { "@type": "Question", "name": "Are the prize amounts official?", "acceptedAnswer": { "@type": "Answer", "text": "DrawWatch shows each game's standard prizes, including Power Play, the Mega Millions multiplier, All Star Bonus and Double Play. Some prizes, and every prize in California, are pari-mutuel and can differ. Always confirm a win with your state lottery." } },
+    { "@type": "Question", "name": "What happens to my ticket photos?", "acceptedAnswer": { "@type": "Answer", "text": "Your phone reads the photo. If you allow it, a smaller copy is double-checked by an AI service and isn't kept by us. You can choose to read on your phone only." } },
+    { "@type": "Question", "name": "Is DrawWatch on iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Not yet. DrawWatch is on Android today." } }
+  ]
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="top">
   <div class="wrap">
     <a class="top-brand" href="drawwatch.html"><img src="img/drawwatch/icon-192.png" alt="" width="32" height="32">DrawWatch</a>
     <nav aria-label="Site">
-      <a href="drawwatch.html" aria-current="page">App</a>
-      <a href="privacy-policy.html">Privacy</a>
-      <a href="terms-of-service.html">Terms</a>
-      <a href="index.html">E4 Developers</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <a class="get" href="https://play.google.com/store/apps/details?id=com.numcheck.app" rel="noopener">Get the app</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main id="main">
+
   <div class="wrap">
     <div class="hero">
       <div>
-        <img class="hero-icon" src="img/drawwatch/icon-192.png" alt="DrawWatch app icon" width="72" height="72">
         <h1>Did your ticket win?</h1>
-        <p class="lead">Scan your lottery ticket. DrawWatch checks it against every draw it's good for and shows what each line won.</p>
+        <p class="lead">Scan your lottery ticket. DrawWatch checks it against every draw it's in and shows exactly what each line won.</p>
         <div class="cta-row">
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.numcheck.app" rel="noopener">Get it on Google Play</a>
-          <span class="cta-note">Free with ads. Android. No account.</span>
+          <a class="badge" href="https://play.google.com/store/apps/details?id=com.numcheck.app" rel="noopener"><img src="img/drawwatch/google-play-badge.png" alt="Get it on Google Play" width="564" height="168"></a>
+          <span class="cta-note">Free with ads. No account.</span>
+        </div>
+        <div class="games-line" aria-label="Games">
+          <span><i class="ball sm pb" aria-hidden="true"></i>Powerball</span>
+          <span><i class="ball sm mm" aria-hidden="true"></i>Mega Millions</span>
+          <span><i class="ball sm la" aria-hidden="true"></i>Lotto America</span>
+          <span><i class="ball sm mfl" aria-hidden="true"></i>Millionaire for Life</span>
         </div>
       </div>
-      <figure class="hero-shot" aria-hidden="true">
-        <img src="img/drawwatch/tickets.webp" alt="" width="540" height="960">
-      </figure>
-    </div>
-
-    <div class="screens" aria-label="Screens from the app">
-      <figure class="only-narrow"><img src="img/drawwatch/tickets.webp" width="540" height="960" loading="lazy" alt="Your tickets with the next draw, jackpot and countdown"></figure>
-      <figure><img src="img/drawwatch/scan.webp" width="540" height="960" loading="lazy" alt="The ticket editor after a scan, with the numbers filled in"></figure>
-      <figure><img src="img/drawwatch/reveal.webp" width="540" height="960" loading="lazy" alt="Draw night: drawn balls and the matching numbers on your lines"></figure>
-      <figure><img src="img/drawwatch/draw.webp" width="540" height="960" loading="lazy" alt="A draw page with your tickets and the prize table"></figure>
-      <figure><img src="img/drawwatch/pool.webp" width="540" height="960" loading="lazy" alt="An office pool with members and each person's share"></figure>
-      <figure><img src="img/drawwatch/stats.webp" width="540" height="960" loading="lazy" alt="Stats: how often each number has been drawn"></figure>
+      <div class="hero-visual">
+        <div class="phone"><img src="img/drawwatch/phone-tickets.webp" width="600" height="1292" alt="DrawWatch's Tickets screen: the next Powerball draw, its jackpot and countdown, and your tickets with what they won"></div>
+        <div class="card-shot"><img src="img/drawwatch/win-card.webp" width="600" height="738" alt="A win: $21, matched 2 numbers and the Powerball, $7 prize times Power Play 3x"></div>
+      </div>
     </div>
   </div>
 
-  <section>
-    <div class="wrap narrow">
-      <h2>What it does</h2>
-      <ul class="rows">
-        <li><strong>Scan or tap in a ticket</strong>Point the camera at the ticket. DrawWatch reads every line, the add-ons and the draw dates. Anything hard to read is highlighted so you can check it. You can also tap the numbers in yourself.</li>
-        <li><strong>See what each line won</strong>Every ticket is checked against each draw it's good for, with the prize for each line, including Power Play, the Mega Millions multiplier, All Star Bonus and Double Play.</li>
-        <li><strong>Draw night</strong>When results come in, the balls land one at a time and the numbers on your lines light up.</li>
-        <li><strong>Alerts</strong>A notification when results are in for the games you pick, another when a ticket wins, and one when a jackpot passes an amount you choose.</li>
-        <li><strong>Office pools</strong>Who's in, what each person paid, and what each person gets if a line wins.</li>
-        <li><strong>Results and stats</strong>Recent draws for every game with their prize tables, how often each number comes up, and what you've spent and won.</li>
-        <li><strong>Backups</strong>Save your tickets to a file and restore them on a new phone. Android's own backup includes them too.</li>
-      </ul>
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it works</h2>
+      </div>
+      <ol class="steps">
+        <li><span class="ball" aria-hidden="true">1</span><div><h3>Scan your ticket</h3><p>Point the camera at it. Every line, add-on and draw date is read, and anything unclear is highlighted for you to check. You can also tap the numbers in.</p></div></li>
+        <li><span class="ball" aria-hidden="true">2</span><div><h3>DrawWatch follows the draws</h3><p>Results come in on their own for every draw your ticket covers, and you get an alert when they're in.</p></div></li>
+        <li><span class="ball" aria-hidden="true">3</span><div><h3>See what you won</h3><p>Each line shows the numbers it matched and its prize, with Power Play, multipliers, All Star Bonus and Double Play worked in.</p></div></li>
+      </ol>
     </div>
   </section>
 
-  <section>
-    <div class="wrap narrow">
-      <h2>Games</h2>
-      <div class="table-scroll">
-        <table class="games">
-          <thead><tr><th scope="col">Game</th><th scope="col">Draws (Eastern time)</th><th scope="col">Numbers</th><th scope="col">Price</th></tr></thead>
-          <tbody>
-            <tr><td><span class="dot pb"></span>Powerball</td><td data-label="Draws">Mon, Wed, Sat at 10:59 PM</td><td data-label="Numbers">5 of 69, Powerball 1 to 26</td><td data-label="Price">$2. Power Play +$1. Double Play +$1 where sold.</td></tr>
-            <tr><td><span class="dot mm"></span>Mega Millions</td><td data-label="Draws">Tue, Fri at 11:00 PM</td><td data-label="Numbers">5 of 70, Mega Ball 1 to 24</td><td data-label="Price">$5, multiplier included</td></tr>
-            <tr><td><span class="dot la"></span>Lotto America</td><td data-label="Draws">Mon, Wed, Sat at 10:15 PM</td><td data-label="Numbers">5 of 52, Star Ball 1 to 10</td><td data-label="Price">$1. All Star Bonus +$1.</td></tr>
-            <tr><td><span class="dot mfl"></span>Millionaire for Life</td><td data-label="Draws">Every night at 11:15 PM</td><td data-label="Numbers">5 of 58, Millionaire Ball 1 to 5</td><td data-label="Price">$5</td></tr>
-          </tbody>
-        </table>
+  <section aria-label="Features">
+    <div class="wrap">
+
+      <div class="feature">
+        <div>
+          <h2>Scan it once</h2>
+          <p class="lead" style="margin-top:14px">One photo adds the whole ticket: every line, Power Play or Double Play, the multiplier, how many draws it's good for and the date.</p>
+          <ul>
+            <li>Numbers that look off are ringed so you can check them</li>
+            <li>Edit anything before you save</li>
+            <li>No camera handy? Tap the balls instead</li>
+          </ul>
+        </div>
+        <div class="visual"><div class="phone"><img src="img/drawwatch/phone-scan.webp" width="600" height="1292" loading="lazy" alt="The ticket editor filled in from a scan, with one number ringed to check"></div></div>
+      </div>
+
+      <div class="feature flip">
+        <div>
+          <h2>Watch your numbers on draw night</h2>
+          <p class="lead" style="margin-top:14px">When results land, the balls drop one at a time and the numbers on your lines light up as they match.</p>
+          <ul>
+            <li>Plays once per draw, and you can skip it</li>
+            <li>Ends on what you won, or a plain "no win this time"</li>
+          </ul>
+        </div>
+        <div class="visual"><div class="phone"><img src="img/drawwatch/phone-reveal.webp" width="600" height="1292" loading="lazy" alt="Draw night: the drawn balls and your three lines with matching numbers ringed"></div></div>
+      </div>
+
+      <div class="feature">
+        <div>
+          <h2>Know exactly what each line won</h2>
+          <p class="lead" style="margin-top:14px">Every draw has its prize table, with the rows you matched highlighted. Wins show the math, like <span class="money">$7 × 3 = $21</span>.</p>
+          <ul>
+            <li>Multi-line and multi-draw tickets stay together</li>
+            <li>Where to cash it and how long you have to claim</li>
+          </ul>
+        </div>
+        <div class="visual"><div class="phone"><img src="img/drawwatch/phone-draw.webp" width="600" height="1292" loading="lazy" alt="A draw page: your tickets in that draw and the prize table"></div></div>
+      </div>
+
+      <div class="feature flip">
+        <div>
+          <h2>Run the office pool</h2>
+          <p class="lead" style="margin-top:14px">Add who's in and what they put in. DrawWatch checks the pool's lines every draw and splits any prize to the cent.</p>
+          <ul>
+            <li>See what each person paid and what each person gets</li>
+            <li>Share a summary with the group</li>
+          </ul>
+        </div>
+        <div class="visual"><div class="phone"><img src="img/drawwatch/phone-pool.webp" width="600" height="1292" loading="lazy" alt="A Mega Millions pool: six people, what each paid and what each gets"></div></div>
+      </div>
+
+      <div class="feature">
+        <div>
+          <h2>Your numbers, by the numbers</h2>
+          <p class="lead" style="margin-top:14px">Hot, cold and overdue numbers for each game, how often every number has come up, and what you've spent and won.</p>
+          <p class="note" style="margin-top:14px">Draws are random. Stats describe the past, not what comes next.</p>
+        </div>
+        <div class="visual"><div class="phone"><img src="img/drawwatch/phone-stats.webp" width="600" height="1292" loading="lazy" alt="Stats: hot and cold Powerball numbers over the last 90 draws"></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="games">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Four games, one app</h2>
+        <p class="lead">Results come from official sources. Times are Eastern.</p>
+      </div>
+      <div class="games">
+        <div class="game">
+          <div class="game-head"><i class="ball pb" aria-hidden="true"></i><h3>Powerball</h3></div>
+          <dl><dt>Draws</dt><dd>Mon, Wed, Sat, 10:59 PM</dd><dt>Play</dt><dd>5 of 69 + Powerball 1 to 26</dd><dt>Price</dt><dd>$2. Power Play +$1. Double Play +$1 where sold.</dd></dl>
+        </div>
+        <div class="game">
+          <div class="game-head"><i class="ball mm" aria-hidden="true"></i><h3>Mega Millions</h3></div>
+          <dl><dt>Draws</dt><dd>Tue, Fri, 11:00 PM</dd><dt>Play</dt><dd>5 of 70 + Mega Ball 1 to 24</dd><dt>Price</dt><dd>$5, multiplier included</dd></dl>
+        </div>
+        <div class="game">
+          <div class="game-head"><i class="ball la" aria-hidden="true"></i><h3>Lotto America</h3></div>
+          <dl><dt>Draws</dt><dd>Mon, Wed, Sat, 10:15 PM</dd><dt>Play</dt><dd>5 of 52 + Star Ball 1 to 10</dd><dt>Price</dt><dd>$1. All Star Bonus +$1.</dd></dl>
+        </div>
+        <div class="game">
+          <div class="game-head"><i class="ball mfl" aria-hidden="true"></i><h3>Millionaire for Life</h3></div>
+          <dl><dt>Draws</dt><dd>Every night, 11:15 PM</dd><dt>Play</dt><dd>5 of 58 + Millionaire Ball 1 to 5</dd><dt>Price</dt><dd>$5</dd></dl>
+        </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="wrap narrow">
-      <h2>Your data</h2>
-      <ul class="rows">
-        <li><strong>Your tickets stay on your phone</strong>There's no account to make, and your tickets, pools and saved numbers aren't uploaded to us.</li>
-        <li><strong>Scanning</strong>If you allow it, a smaller copy of the ticket photo is sent to an AI service (Anthropic) to double-check the numbers. We don't keep the photo. You can switch to reading on your phone only at any time.</li>
-        <li><strong>Ads and app health</strong>The app shows ads from Google AdMob and uses Google Firebase for alerts, crash reports and usage statistics.</li>
-      </ul>
-      <p class="note" style="margin-top:16px">The details are in the <a href="privacy-policy.html">privacy policy</a>.</p>
+  <section id="privacy">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Your tickets stay on your phone</h2>
+        <p class="lead">No account, no sign-up, and nothing to sync.</p>
+      </div>
+      <div class="trust">
+        <div><h3>Tickets and pools</h3><p>Saved on your phone. We never receive them. Back them up to a file whenever you like.</p></div>
+        <div><h3>Scans</h3><p>Your phone reads the photo. If you allow it, a smaller copy is double-checked by an AI service, and we don't keep it. You can choose phone only.</p></div>
+        <div><h3>Ads and app health</h3><p>Ads come from Google AdMob. Alerts, crash reports and usage statistics use Google Firebase.</p></div>
+      </div>
+      <p class="note" style="margin-top:18px">The details are in the <a href="privacy-policy.html">privacy policy</a>.</p>
     </div>
   </section>
 
-  <section>
-    <div class="wrap narrow">
-      <h2>Please note</h2>
-      <div class="box">
-        <p>DrawWatch isn't affiliated with or endorsed by any lottery, and it doesn't sell tickets. Prize amounts shown are the standard prizes; some prizes, and every prize in California, are pari-mutuel and can differ. Always confirm a win with your official state lottery before you throw a ticket away.</p>
-        <p>Draws are random, and past results don't predict future ones. Please play responsibly. For help with problem gambling, call or text 1-800-GAMBLER.</p>
+  <section id="faq">
+    <div class="wrap"><div class="measure">
+      <h2>Questions</h2>
+      <div class="faq">
+        <details><summary>Is DrawWatch free?</summary><div><p>Yes. DrawWatch is free and shows ads. There's no account and no sign-up.</p></div></details>
+        <details><summary>Can I buy tickets in DrawWatch?</summary><div><p>No. DrawWatch checks tickets you already bought from a lottery retailer. It doesn't sell tickets or take bets.</p></div></details>
+        <details><summary>Are the prize amounts official?</summary><div><p>DrawWatch shows each game's standard prizes, including Power Play, the Mega Millions multiplier, All Star Bonus and Double Play. Some prizes, and every prize in California, are pari-mutuel and can differ. Always confirm a win with your state lottery before you throw a ticket away.</p></div></details>
+        <details><summary>Which states does it work in?</summary><div><p>Anywhere these games are sold. Double Play and All Star Bonus are only offered in some states.</p></div></details>
+        <details><summary>What happens to my ticket photos?</summary><div><p>Your phone reads the photo. If you allow it, a smaller copy is sent to an AI service (Anthropic) to double-check the numbers. We don't keep it, and you can switch to reading on your phone only at any time. See the <a href="privacy-policy.html">privacy policy</a>.</p></div></details>
+        <details><summary>Is DrawWatch on iPhone?</summary><div><p>Not yet. DrawWatch is on Android today.</p></div></details>
+        <details><summary>Where can I get help with gambling?</summary><div><p>If gambling stops being fun, free and confidential help is available. Call or text 1-800-GAMBLER.</p></div></details>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <div class="balls" aria-hidden="true"><i class="ball pb">11</i><i class="ball mm">24</i><i class="ball la">8</i><i class="ball mfl">5</i></div>
+      <h2>Check your next ticket</h2>
+      <p class="lead">Scan it, and DrawWatch takes it from there.</p>
+      <div class="cta-row">
+        <a class="badge lg" href="https://play.google.com/store/apps/details?id=com.numcheck.app" rel="noopener"><img src="img/drawwatch/google-play-badge.png" alt="Get it on Google Play" width="564" height="168" loading="lazy"></a>
       </div>
     </div>
   </section>
@@ -136,13 +243,12 @@
 <footer>
   <div class="wrap">
     <nav aria-label="Footer">
-      <a href="https://play.google.com/store/apps/details?id=com.numcheck.app" rel="noopener">Google Play</a>
       <a href="privacy-policy.html">Privacy policy</a>
       <a href="terms-of-service.html">Terms of service</a>
-      <a href="mailto:lottocheckerabc@gmail.com">lottocheckerabc@gmail.com</a>
+      <a href="mailto:lottocheckerabc@gmail.com">Contact</a>
       <a href="index.html">E4 Developers</a>
     </nav>
-    <p>© 2026 E4 Developers. Powerball, Mega Millions, Lotto America and Millionaire for Life are trademarks of their owners.</p>
+    <p class="fine">DrawWatch isn't affiliated with or endorsed by any lottery and doesn't sell tickets. Powerball, Mega Millions, Lotto America and Millionaire for Life are trademarks of their owners. Google Play and the Google Play logo are trademarks of Google LLC. Please play responsibly. © 2026 E4 Developers.</p>
   </div>
 </footer>
 
