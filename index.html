@@ -1,193 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E4 Developers · Mobile apps studio</title>
-    <meta name="description" content="E4 Developers builds mobile tools that sweat the details. DrawWatch is a free Android lottery checker. DrawSight is a photo-first inspection reporting app for licensed home inspectors.">
-    <meta name="author" content="E4 Developers">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#0C1322">
-    <meta name="google-site-verification" content="H5CPbit4HnOmKxbe45nMqXhFQb_tYFMQeLm1g6-_eMU" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="E4 Developers · Mobile apps studio">
-    <meta property="og:description" content="Two apps from one small studio. DrawWatch (lottery checker, Android) and DrawSight (inspection reporting, iOS &amp; Android).">
-    <meta property="og:url" content="https://e4developers.github.io/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="E4 Developers">
-    <meta property="og:image" content="https://e4developers.github.io/ic_launcher.png">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="E4 Developers · Mobile apps studio">
-    <meta name="twitter:description" content="Two mobile apps from E4 Developers: DrawWatch and DrawSight.">
-
-    <link rel="canonical" href="https://e4developers.github.io/">
-    <link rel="icon" type="image/png" href="ic_launcher.png">
-    <link rel="apple-touch-icon" href="ic_launcher.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="style.css">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "E4 Developers",
-      "url": "https://e4developers.github.io/",
-      "logo": "https://e4developers.github.io/ic_launcher.png",
-      "description": "Mobile app studio. Builds DrawWatch (lottery ticket checker for Android) and DrawSight (photo-first inspection reporting for licensed home inspectors).",
-      "makesOffer": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "SoftwareApplication",
-            "name": "DrawWatch",
-            "operatingSystem": "Android",
-            "applicationCategory": "UtilitiesApplication",
-            "url": "https://e4developers.github.io/drawwatch.html",
-            "downloadUrl": "https://play.google.com/store/apps/details?id=com.numcheck.app",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "SoftwareApplication",
-            "name": "DrawSight",
-            "operatingSystem": "iOS, Android",
-            "applicationCategory": "BusinessApplication",
-            "url": "https://drawsight.app/"
-          }
-        }
-      ]
-    }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E4 Developers: DrawWatch and DrawSight</title>
+<meta name="description" content="E4 Developers is a small mobile app studio. DrawWatch checks your lottery tickets on Android. DrawSight turns a home inspector's photos into a draft report.">
+<meta name="author" content="E4 Developers">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#F5F5F2">
+<meta name="google-site-verification" content="H5CPbit4HnOmKxbe45nMqXhFQb_tYFMQeLm1g6-_eMU" />
+<meta property="og:title" content="E4 Developers">
+<meta property="og:description" content="Two apps from one small studio: DrawWatch (lottery ticket checker, Android) and DrawSight (inspection reporting, iOS and Android).">
+<meta property="og:url" content="https://e4developers.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="E4 Developers">
+<meta property="og:image" content="https://e4developers.github.io/img/drawwatch/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://e4developers.github.io/">
+<link rel="icon" type="image/png" href="img/drawwatch/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Unbounded:wght@700&display=swap">
+<link rel="stylesheet" href="drawwatch.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "E4 Developers",
+  "url": "https://e4developers.github.io/",
+  "logo": "https://e4developers.github.io/img/drawwatch/icon-512.png",
+  "description": "Mobile app studio. Builds DrawWatch (lottery ticket checker for Android) and DrawSight (photo-first inspection reporting for licensed home inspectors).",
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "SoftwareApplication", "name": "DrawWatch", "operatingSystem": "Android", "applicationCategory": "EntertainmentApplication", "url": "https://e4developers.github.io/drawwatch.html", "downloadUrl": "https://play.google.com/store/apps/details?id=com.numcheck.app", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } } },
+    { "@type": "Offer", "itemOffered": { "@type": "SoftwareApplication", "name": "DrawSight", "operatingSystem": "iOS, Android", "applicationCategory": "BusinessApplication", "url": "https://drawsight.app/" } }
+  ]
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="shell">
-
-    <nav class="nav" aria-label="Primary">
-        <a class="brand" href="/" aria-label="E4 Developers home">
-            <span class="brand-mark" aria-hidden="true">E4</span>
-            <span>E4 Developers</span>
-        </a>
-        <div class="nav-links">
-            <a href="#our-apps">Our apps</a>
-            <a href="drawwatch.html">DrawWatch</a>
-            <a href="https://drawsight.app/" rel="noopener">DrawSight</a>
-        </div>
+<header class="top">
+  <div class="wrap">
+    <a class="top-brand" href="./"><span class="brand-mark" aria-hidden="true">E4</span>E4 Developers</a>
+    <nav aria-label="Site">
+      <a href="drawwatch.html">DrawWatch</a>
+      <a href="https://drawsight.app/" rel="noopener">DrawSight</a>
     </nav>
+  </div>
+</header>
 
-    <section class="studio-hero">
-        <span class="eyebrow">E4 Developers studio</span>
-        <h1>Two apps. One small studio.</h1>
-        <p class="lede">
-            <strong>DrawWatch</strong> scans your lottery tickets and shows
-            what each line won. <strong>DrawSight</strong> turns a home
-            inspector's photos into a draft report ready to ship. Both store
-            your data on your device, not on our servers, and neither uses
-            what you put in to train AI.
-        </p>
-    </section>
-
-    <section id="our-apps" class="product-grid" aria-label="E4 Developers apps">
-
-        <a class="product-card drawwatch" href="drawwatch.html">
-            <div class="product-head">
-                <img class="product-icon" src="img/drawwatch/icon-192.png" alt="DrawWatch app icon">
-                <div>
-                    <div class="product-name">DrawWatch</div>
-                    <div class="product-meta">Lottery ticket checker · Free</div>
-                </div>
-            </div>
-            <p class="product-tagline">
-                Scan a Powerball, Mega Millions, Lotto America or Millionaire
-                for Life ticket. DrawWatch checks it against every draw it's
-                good for and shows what each line won.
-            </p>
-            <ul>
-                <li>Scan a ticket, or tap the numbers in</li>
-                <li>Prizes for every line, add-ons included</li>
-                <li>Alerts when results are in and when a ticket wins</li>
-                <li>Free with ads, no account required</li>
-            </ul>
-            <span class="platform-pill" style="margin-bottom: 14px; align-self: flex-start;">Android</span>
-            <span class="product-cta">See what DrawWatch does →</span>
-        </a>
-
-        <a class="product-card drawsight" href="https://drawsight.app/" rel="noopener">
-            <div class="product-head">
-                <img class="product-icon" src="https://drawsight.app/assets/logo.png" alt="DrawSight app icon">
-                <div>
-                    <div class="product-name">DrawSight</div>
-                    <div class="product-meta">Inspection reporting · Subscription</div>
-                </div>
-            </div>
-            <p class="product-tagline">
-                Photo-first reporting for licensed home inspectors. AI sorts
-                each photo into the right report section, drafts the finding
-                text, and suggests severity. The inspector reviews and ships.
-            </p>
-            <ul>
-                <li>AI photo routing &amp; finding drafts</li>
-                <li>Your inspection data never leaves your phone</li>
-                <li>State-aware PDF export with the inspector's seal</li>
-                <li>No AI training on your inspection photos</li>
-            </ul>
-            <span class="platform-pill" style="margin-bottom: 14px; align-self: flex-start;">iOS &amp; Android</span>
-            <span class="product-cta">Try DrawSight free →</span>
-        </a>
-
-    </section>
-
-    <section class="studio-about">
-        <h2>One studio, two audiences.</h2>
-        <p>
-            E4 Developers is a small mobile-app studio. We build the kind of
-            tools we'd actually want to use: lean, fast, privacy-respecting,
-            and polished for everyday use, not just for screenshots. Both
-            apps keep your data on your device by default, and we never
-            train AI on what you put in.
-        </p>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-col">
-            <span class="footer-brand">
-                <span class="brand-mark" aria-hidden="true">E4</span>
-                <span>E4 Developers</span>
-            </span>
-            <p>Mobile tools that sweat the details. Built from a small studio, polished for the field.</p>
-            <p style="margin-top: 12px;">© 2026 E4 Developers. All rights reserved.</p>
-        </div>
-        <div class="footer-col">
-            <h4>DrawWatch</h4>
-            <a href="drawwatch.html">Overview</a>
-            <a href="https://play.google.com/store/apps/details?id=com.numcheck.app" rel="noopener">Google Play</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-service.html">Terms of Service</a>
-        </div>
-        <div class="footer-col">
-            <h4>DrawSight</h4>
-            <a href="https://drawsight.app/" rel="noopener">drawsight.app ↗</a>
-            <a href="https://drawsight.app/privacy-policy.html" rel="noopener">Privacy Policy ↗</a>
-            <a href="https://drawsight.app/terms-of-service.html" rel="noopener">Terms of Service ↗</a>
-            <a href="mailto:support@drawsight.app">support@drawsight.app</a>
-        </div>
-    </footer>
-    <div class="footer-bottom">
-        E4 Developers
-        <span class="dot">·</span>
-        DrawWatch &amp; DrawSight
-        <span class="dot">·</span>
-        Built with care, shipped with discipline.
+<main id="main">
+  <div class="wrap">
+    <div class="studio-hero">
+      <h1>Two apps. One small studio.</h1>
+      <p class="lead">We make focused mobile tools: one for checking lottery tickets, one for home inspectors. Both store your data on your device, not on our servers, and neither uses what you put in to train AI.</p>
     </div>
 
-</div>
+    <div class="products">
+      <article class="product">
+        <div class="product-head">
+          <img src="img/drawwatch/icon-192.png" alt="" width="60" height="60">
+          <div><h2>DrawWatch</h2><div class="meta">Lottery ticket checker · Android · Free</div></div>
+        </div>
+        <p>Scan a Powerball, Mega Millions, Lotto America or Millionaire for Life ticket. DrawWatch checks it against every draw it's in and shows what each line won.</p>
+        <ul>
+          <li>Scan a ticket, or tap the numbers in</li>
+          <li>The prize for every line, add-ons included</li>
+          <li>Alerts when results are in and when a ticket wins</li>
+          <li>Free with ads, no account</li>
+        </ul>
+        <div class="links">
+          <a class="primary" href="drawwatch.html">See DrawWatch</a>
+          <a href="https://play.google.com/store/apps/details?id=com.numcheck.app" rel="noopener">Google Play</a>
+        </div>
+      </article>
+
+      <article class="product">
+        <div class="product-head">
+          <img src="https://drawsight.app/assets/logo.png" alt="" width="60" height="60">
+          <div><h2>DrawSight</h2><div class="meta">Inspection reporting · iOS and Android · Subscription</div></div>
+        </div>
+        <p>Photo-first reporting for licensed home inspectors. AI sorts each photo into the right report section, drafts the finding text and suggests severity. The inspector reviews and ships.</p>
+        <ul>
+          <li>Photo routing and finding drafts</li>
+          <li>Inspection data stays on the phone</li>
+          <li>State-aware PDF export with the inspector's seal</li>
+          <li>No AI training on inspection photos</li>
+        </ul>
+        <div class="links">
+          <a class="primary" href="https://drawsight.app/" rel="noopener">See DrawSight</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="studio-about">
+        <h2>About the studio</h2>
+        <p class="lead">E4 Developers is a small studio. We build tools we'd use ourselves: fast, plain to read, and careful with your data.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="DrawWatch">
+      <a href="drawwatch.html">DrawWatch</a>
+      <a href="privacy-policy.html">DrawWatch privacy</a>
+      <a href="terms-of-service.html">DrawWatch terms</a>
+      <a href="mailto:lottocheckerabc@gmail.com">lottocheckerabc@gmail.com</a>
+    </nav>
+    <nav aria-label="DrawSight">
+      <a href="https://drawsight.app/" rel="noopener">DrawSight</a>
+      <a href="https://drawsight.app/privacy-policy.html" rel="noopener">DrawSight privacy</a>
+      <a href="https://drawsight.app/terms-of-service.html" rel="noopener">DrawSight terms</a>
+      <a href="mailto:support@drawsight.app">support@drawsight.app</a>
+    </nav>
+    <p class="fine">© 2026 E4 Developers.</p>
+  </div>
+</footer>
 
 </body>
 </html>
