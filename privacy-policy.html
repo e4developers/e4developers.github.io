@@ -30,7 +30,7 @@
 <main class="legal">
   <div class="wrap narrow">
     <h1>Privacy policy</h1>
-    <p class="updated">Last updated October 19, 2026. Applies to DrawWatch on Android and iPhone, all versions.</p>
+    <p class="updated">Last updated October 20, 2026. Applies to DrawWatch on Android and iPhone, all versions.</p>
 
     <p style="margin-top:24px">DrawWatch is a lottery ticket checker made by E4 Developers ("we", "us"). This policy explains what the app keeps on your phone, what it sends, who receives it, and the choices you have.</p>
 
@@ -38,7 +38,7 @@
       <p><strong style="color:var(--text)">The short version</strong></p>
       <ul>
         <li>There's no account. Your tickets, pools and saved numbers stay on your phone.</li>
-        <li>If you allow it, a smaller copy of a ticket photo you scan is sent to an AI service (Anthropic) to double-check the numbers. We don't keep it. You can turn this off.</li>
+        <li>A smaller copy of a ticket photo you scan is sent to an AI service (Anthropic) to double-check the numbers: on Android unless you turn it off, and on iPhone only if you allow it. We don't keep it. You can turn this off at any time.</li>
         <li>The app shows ads from Google AdMob and uses Google Firebase for alerts, crash reports and usage statistics. Those services collect device identifiers and similar data.</li>
         <li>We don't sell your personal information.</li>
       </ul>
@@ -60,7 +60,7 @@
 
     <h3>Ticket scanning</h3>
     <ul>
-      <li>The first time you scan, the app asks whether it may double-check scans online. If you say yes and your phone is online, a smaller copy of the ticket photo is sent to our server, which sends it to Anthropic's Claude to read the numbers and returns them. Your phone reads the photo at the same time.</li>
+      <li>On Android, online double-checks are on by default, and the camera screen says so. On iPhone, the first time you scan, the app asks whether it may double-check scans online. When double-checks are on and your phone is online, a smaller copy of the ticket photo is sent to our server, which sends it to Anthropic's Claude to read the numbers and returns them. Your phone reads the photo at the same time.</li>
       <li>Our server doesn't store the photo. Anthropic processes it under its commercial terms: it doesn't use it to train its models, and it deletes it within 30 days, unless its safety systems flag the request, in which case it may keep it longer as described in Anthropic's privacy policy.</li>
       <li>If you choose "Read on this phone only", or turn off "Double-check scans online" in Alerts &amp; settings, or you're offline, the photo never leaves your phone. Reading on the phone uses Google ML Kit, which runs on your device.</li>
       <li>To limit use, our server counts how many photos each install sends per day, using a random ID the app makes (or, if that's missing, your IP address). The counts are deleted after 2 days.</li>
@@ -97,7 +97,7 @@
       <thead><tr><th scope="col">Who</th><th scope="col">What</th><th scope="col">Why</th></tr></thead>
       <tbody>
         <tr><td>Cloudflare (hosts our server)</td><td>IP address; scan photos in transit; daily scan counts (2 days)</td><td>Running the server, limiting use</td></tr>
-        <tr><td>Anthropic</td><td>Scan photos, only if you allow it</td><td>Reading the numbers on the ticket</td></tr>
+        <tr><td>Anthropic</td><td>Scan photos, while online double-checks are on (on by default on Android, only if you allow it on iPhone)</td><td>Reading the numbers on the ticket</td></tr>
         <tr><td>Google Firebase</td><td>Device token and alert topics, crash reports, usage statistics, installation IDs</td><td>Alerts, fixing crashes, understanding use</td></tr>
         <tr><td>Google AdMob</td><td>Advertising ID, app set ID, approximate location, device information, ad interactions</td><td>Showing and measuring ads, fraud prevention</td></tr>
         <tr><td>Google ML Kit</td><td>Runs on your phone; may send Google basic performance and device data</td><td>Reading tickets on the phone</td></tr>
