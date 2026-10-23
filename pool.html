@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* Same device switch as drawwatch.html: Android gets the Play button,
+   iPhone gets a note, desktop is told to open the link on the phone. */
+(function () {
+  var u = navigator.userAgent || "", d = "desktop";
+  if (/Android/i.test(u)) d = "android";
+  else if (/iPhone|iPad|iPod/i.test(u) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) d = "ios";
+  document.documentElement.setAttribute("data-device", d);
+})();
+</script>
+<title>A DrawWatch pool was shared with you</title>
+<meta name="description" content="Open this link in DrawWatch to see a lottery pool's lines and how each draw went.">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#F5F5F2">
+<link rel="icon" type="image/png" href="img/drawwatch/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Unbounded:wght@700&display=swap">
+<link rel="stylesheet" href="drawwatch.css">
+<style>
+  /* One screen, nothing else on it. The pool itself is in this link after
+     the "#": browsers never send that part to any server, and this page
+     reads it only to copy the link. */
+  .pool { min-height: 100vh; display: flex; flex-direction: column; }
+  .pool main { flex: 1; display: flex; align-items: center; padding: 24px var(--gutter) 40px; }
+  .pool .inner { width: 100%; max-width: 520px; margin: 0 auto; }
+  .pool h1 { font-family: var(--display); font-size: clamp(26px, 6vw, 34px); line-height: 1.15; margin: 0 0 14px; color: var(--text); }
+  .pool p { font-size: 17px; line-height: 1.5; color: var(--text-soft); margin: 0 0 18px; }
+  .pool .steps { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 16px 18px; margin: 22px 0 0; }
+  .pool .steps strong { display: block; color: var(--text); font-size: 16px; margin-bottom: 4px; }
+  .pool .steps span { display: block; color: var(--muted); font-size: 15px; line-height: 1.45; }
+  .pool .copy { margin-top: 14px; font: 600 16px var(--body); color: var(--text); background: var(--card); border: 1px solid var(--line-strong); border-radius: 999px; padding: 12px 20px; min-height: 48px; cursor: pointer; }
+  .pool .copied { margin-left: 10px; color: var(--money); font-size: 15px; }
+  .pool .get-block { margin-top: 8px; }
+  .pool footer { padding: 0 var(--gutter) 28px; text-align: center; color: var(--muted); font-size: 14px; }
+  .pool footer a { color: var(--muted); }
+</style>
+</head>
+<body class="pool">
+<main>
+  <div class="inner">
+    <h1>Someone shared a lottery pool with you</h1>
+    <p>This link opens their pool in the DrawWatch app: its lines, and how each draw went. Only the person who shared it can change it.</p>
+
+    <div class="get-block for-android">
+      <a class="badge" href="https://play.google.com/store/apps/details?id=com.numcheck.app" rel="noopener"><img src="img/drawwatch/google-play-badge.png" alt="Get it on Google Play" width="564" height="168"></a>
+    </div>
+    <div class="get-block for-ios">
+      <div class="ios-note">
+        <strong>DrawWatch is on Android today.</strong>
+        <span>An iPhone version is on the way.</span>
+      </div>
+    </div>
+    <div class="get-block for-desktop">
+      <div class="ios-note">
+        <strong>Open this link on your phone.</strong>
+        <span>The pool opens in DrawWatch for Android.</span>
+      </div>
+    </div>
+
+    <div class="steps">
+      <strong>Already have DrawWatch?</strong>
+      <span>Copy this link, then in the app open Pools, tap the menu, choose "Add a shared pool" and tap Paste.</span>
+      <button class="copy" type="button" id="copy">Copy this link</button><span class="copied" id="copied" role="status"></span>
+    </div>
+  </div>
+</main>
+<footer><a href="drawwatch.html">About DrawWatch</a> · <a href="privacy-policy.html">Privacy</a></footer>
+<script>
+/* Copies the whole link, pool included, on this phone only. */
+(function () {
+  var button = document.getElementById("copy"), note = document.getElementById("copied");
+  if (!location.hash || !navigator.clipboard) { button.hidden = true; return; }
+  button.addEventListener("click", function () {
+    navigator.clipboard.writeText(location.href).then(function () {
+      note.textContent = "Copied";
+    }, function () {
+      note.textContent = "Couldn't copy. Press and hold the address bar to copy it.";
+    });
+  });
+})();
+</script>
+</body>
+</html>

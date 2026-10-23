@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["AV35TV39GP.com.numcheck.app"],
+        "components": [
+          { "/": "/pool", "comment": "DrawWatch pool invite links" },
+          { "/": "/pool/*", "comment": "DrawWatch pool invite links" }
+        ]
+      }
+    ]
+  }
+}
