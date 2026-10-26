@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* One download link for posts, shares and QR codes: /get?c=CODE.
+   Android goes to Google Play with CODE as the install source, iPhone to the
+   App Store (to the landing page until the iPhone app is out), desktop to the
+   landing page's QR code. CODE is letters, digits, _ and - only. */
+(function () {
+  var IOS_LIVE = false;   // true the hour the App Store releases DrawWatch
+  var m = /[?&]c=([A-Za-z0-9_-]{1,40})/.exec(location.search);
+  var c = m ? m[1] : "get";
+  var u = navigator.userAgent || "";
+  var play = "https://play.google.com/store/apps/details?id=com.numcheck.app&referrer=" +
+    encodeURIComponent("utm_source=" + c + "&utm_medium=get");
+  var dest;
+  if (/Android/i.test(u)) dest = play;
+  else if (/iPhone|iPad|iPod/i.test(u) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) {
+    dest = IOS_LIVE ? "https://apps.apple.com/us/app/id6760988938?ct=" + c : "drawwatch.html?c=" + c;
+  } else dest = "drawwatch.html?c=" + c;
+  location.replace(dest);
+})();
+</script>
+<title>Get DrawWatch</title>
+<meta name="description" content="Scan your lottery ticket. DrawWatch checks every draw it's in and shows what each line won. Free, no account.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#F5F5F2">
+<meta property="og:title" content="DrawWatch: did your ticket win?">
+<meta property="og:description" content="Scan your lottery ticket. DrawWatch checks every draw it's in and shows what each line won.">
+<meta property="og:url" content="https://e4developers.github.io/get">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DrawWatch">
+<meta property="og:image" content="https://e4developers.github.io/img/drawwatch/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://e4developers.github.io/img/drawwatch/og.png">
+<link rel="icon" type="image/png" href="img/drawwatch/icon-192.png">
+<link rel="stylesheet" href="drawwatch.css">
+</head>
+<body>
+<main style="max-width: 28rem; margin: 0 auto; padding: 48px var(--gutter);">
+  <p>Opening DrawWatch&hellip;</p>
+  <p><a href="https://play.google.com/store/apps/details?id=com.numcheck.app&amp;referrer=utm_source%3Dget%26utm_medium%3Dget" rel="noopener">Get it on Google Play</a></p>
+  <p><a href="drawwatch.html">About DrawWatch</a></p>
+</main>
+</body>
+</html>
