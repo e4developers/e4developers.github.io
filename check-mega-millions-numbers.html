@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* Same device switch as drawwatch.html (the header button hides on iPhone
+   until the App Store release). */
+(function () {
+  var u = navigator.userAgent || "", d = "desktop";
+  if (/Android/i.test(u)) d = "android";
+  else if (/iPhone|iPad|iPod/i.test(u) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) d = "ios";
+  document.documentElement.setAttribute("data-device", d);
+})();
+</script>
+<title>Check your Mega Millions numbers: latest results and ticket checker | DrawWatch</title>
+<meta name="description" content="The latest Mega Millions winning numbers, and a free checker: enter the numbers on your ticket to see what they matched and won in the last 10 draws.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://e4developers.github.io/check-mega-millions-numbers">
+<meta name="theme-color" content="#F5F5F2">
+<meta property="og:title" content="Check your Mega Millions numbers">
+<meta property="og:description" content="The latest Mega Millions winning numbers, and a free checker for the numbers on your ticket.">
+<meta property="og:url" content="https://e4developers.github.io/check-mega-millions-numbers">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DrawWatch">
+<meta property="og:image" content="https://e4developers.github.io/img/drawwatch/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="img/drawwatch/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Unbounded:wght@700&display=swap">
+<link rel="stylesheet" href="drawwatch.css">
+<link rel="stylesheet" href="check.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="top-brand" href="drawwatch.html"><img src="img/drawwatch/icon-192.png" alt="" width="32" height="32">DrawWatch</a>
+    <nav aria-label="Site">
+      <a class="hide-sm" href="check-powerball-numbers.html">Powerball</a>
+      <a class="get" href="get?c=web_mm_header">Get the app</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" data-game="megamillions">
+  <section class="check-hero">
+    <div class="wrap">
+      <h1>Check your Mega Millions numbers</h1>
+      <p class="lead">See the latest Mega Millions winning numbers, then enter the numbers on your ticket to see what they matched in the last 10 draws. Draws are Tuesday and Friday at 11:00 PM Eastern.</p>
+      <div class="check-grid">
+        <div class="box latest" id="latest" aria-live="polite">
+          <p>Loading the latest Mega Millions numbers&hellip;</p>
+          <noscript><p>Turn on JavaScript to see the latest numbers here, or check your state lottery's site.</p></noscript>
+        </div>
+        <div class="checker">
+          <h2>Did your numbers win?</h2>
+          <form id="checker" novalidate>
+            <div class="picks">
+          <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" data-white aria-label="Number 1" required>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" data-white aria-label="Number 2" required>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" data-white aria-label="Number 3" required>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" data-white aria-label="Number 4" required>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" data-white aria-label="Number 5" required>
+              <span class="plus" aria-hidden="true">+</span>
+              <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" class="bonus" data-bonus aria-label="Mega Ball" required>
+            </div>
+            <p class="check-fine">5 numbers from 1 to 70, then the Mega Ball from 1 to 24.</p>
+            <div class="opts"><label for="mult">Multiplier printed on your line</label> <select id="mult"><option value="">Not sure</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option><option value="5">5×</option><option value="10">10×</option></select></div>
+            <button class="go" type="submit">Check my numbers</button>
+          </form>
+          <div id="results" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="check-cta">
+    <div class="wrap">
+      <div class="box">
+        <h2>Let DrawWatch check every draw for you</h2>
+        <p>Scan your ticket once. DrawWatch checks it against every draw it's in, shows what each line won, and reminds you of the claim deadline. Free, no account.</p>
+        <a class="go" href="get?c=web_mm_check">Get DrawWatch free</a>
+      </div>
+      <p class="check-fine">Results come from New York State's open data and usually appear by the morning after the draw. Prizes shown follow the national prize chart; California pays pari-mutuel amounts, and some prizes can differ. Always confirm a win with your state lottery before you throw a ticket away. DrawWatch isn't affiliated with or endorsed by any lottery. Draws are random, and past results don't predict future ones. If gambling stops being fun, call or text 1-800-GAMBLER.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="drawwatch.html">DrawWatch</a>
+      <a href="check-powerball-numbers">Check Powerball numbers</a>
+      <a href="check-mega-millions-numbers">Check Mega Millions numbers</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="terms-of-service.html">Terms of service</a>
+    </nav>
+    <p class="fine">Powerball, Mega Millions, Lotto America and Millionaire for Life are trademarks of their owners. Please play responsibly. &copy; 2026 E4 Developers.</p>
+  </div>
+</footer>
+<script src="check.js" defer></script>
+</body>
+</html>

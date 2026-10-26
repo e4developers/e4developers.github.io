@@ -1,0 +1,52 @@
+/* Number checker pages (check-powerball-numbers.html,
+ * check-mega-millions-numbers.html). Builds on drawwatch.css. */
+
+.check-hero { padding: 48px 0 24px; }
+.check-hero .lead { margin-top: 16px; max-width: 46ch; }
+.check-grid { display: grid; gap: 24px; margin-top: 28px; }
+
+.latest .when { color: var(--text); font-weight: 700; }
+.latest .balls, .draws .balls { display: flex; flex-wrap: wrap; gap: 8px; }
+.latest .balls { margin: 14px 0 10px; }
+.latest .note { color: var(--text); font-weight: 700; }
+.latest .src { color: var(--muted); font-size: 14px; margin-top: 6px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.checker h2 { font-size: clamp(24px, 3vw, 32px); }
+.checker form { margin-top: 16px; }
+.picks { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.picks input { width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--line-strong); background: var(--card); text-align: center; font-family: var(--display); font-size: 18px; color: var(--text); -moz-appearance: textfield; }
+.picks input::-webkit-outer-spin-button, .picks input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.picks input.bonus { border-width: 2px; }
+.picks .plus { color: var(--muted); font-family: var(--display); }
+.opts { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin-top: 16px; }
+.opts label { color: var(--text); }
+.opts select { font: inherit; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line-strong); background: var(--card); color: var(--text); }
+.go { margin-top: 18px; display: inline-block; color: var(--on-green); background: var(--green); padding: 12px 22px; border-radius: 999px; font-weight: 700; }
+.go:hover { background: #7AF5BA; }
+
+#results { margin-top: 22px; }
+#results .err { color: #B00020; font-weight: 700; }
+#results .sum { color: var(--text); font-weight: 700; }
+.draws { list-style: none; margin-top: 12px; border-top: 1px solid var(--line); }
+.draws li { display: grid; gap: 6px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.draws .d { color: var(--muted); font-size: 15px; }
+.draws .r { color: var(--text-soft); }
+.draws li.won .r { color: var(--money); font-weight: 700; }
+.ball.miss { opacity: 0.35; box-shadow: none; }
+
+.check-cta { padding: 40px 0 56px; }
+.check-cta .box { display: grid; gap: 12px; }
+.check-cta h2 { font-size: clamp(24px, 3vw, 32px); }
+.check-cta a.go { justify-self: start; text-decoration: none; }
+.check-fine { color: var(--muted); font-size: 14px; margin-top: 18px; max-width: 80ch; }
+
+@media (min-width: 760px) {
+  .draws li { grid-template-columns: 110px auto 1fr; align-items: center; gap: 16px; }
+}
+@media (min-width: 1024px) {
+  .check-grid { grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; }
+}
+@media (max-width: 420px) {
+  .picks input { width: 46px; height: 46px; font-size: 16px; }
+}
