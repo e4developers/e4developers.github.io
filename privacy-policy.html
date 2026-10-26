@@ -30,7 +30,7 @@
 <main class="legal">
   <div class="wrap narrow">
     <h1>Privacy policy</h1>
-    <p class="updated">Last updated October 24, 2026. Applies to DrawWatch on Android and iPhone, all versions.</p>
+    <p class="updated">Last updated October 26, 2026. Applies to DrawWatch on Android and iPhone, all versions.</p>
 
     <p style="margin-top:24px">DrawWatch is a lottery ticket checker made by E4 Developers ("we", "us"). This policy explains what the app keeps on your phone, what it sends, who receives it, and the choices you have.</p>
 
@@ -63,7 +63,8 @@
       <li>On Android, online double-checks are on by default, and the camera screen says so. On iPhone, the first time you scan, the app asks whether it may double-check scans online. When double-checks are on and your phone is online, a smaller copy of the ticket photo is sent to our server, which sends it to Anthropic's Claude to read the numbers and returns them. Your phone reads the photo at the same time.</li>
       <li>Our server doesn't store the photo. Anthropic processes it under its commercial terms: it doesn't use it to train its models, and it deletes it within 30 days, unless its safety systems flag the request, in which case it may keep it longer as described in Anthropic's privacy policy.</li>
       <li>If you choose "Read on this phone only", or turn off "Double-check scans online" in Alerts &amp; settings, or you're offline, the photo never leaves your phone. Reading on the phone uses Google ML Kit, which runs on your device.</li>
-      <li>To limit use, our server counts how many photos each install sends per day, using a random ID the app makes (or, if that's missing, your IP address). The counts are deleted after 2 days.</li>
+      <li>To limit use, our server counts how many photos each install sends per day, using a random ID the app makes (or, if that's missing, your IP address). Past the daily limit, your phone reads tickets on its own. The counts are deleted after 2 days.</li>
+      <li>Past the daily limit, you can choose to watch a short ad for a few more double-checks. Only then does the app give that ad the same random ID and a one-time code. Google AdMob sends our server a signed confirmation that the ad was watched, and our server records it with the daily counts to add the double-checks. These records are also deleted after 2 days.</li>
       <li>Versions before 2.0 never sent photos anywhere.</li>
     </ul>
 
@@ -74,7 +75,7 @@
     <p>If the app crashes, Firebase Crashlytics (Google) receives a report: what went wrong, the device model, the operating system and app versions, and a random installation ID. It doesn't include your tickets.</p>
 
     <h3>Usage statistics</h3>
-    <p>Firebase Analytics (Google) receives app opens, sessions and a few events, such as "a win was found" with the game's name, never your numbers. Versions before 2.0 also sent the smallest possible prize amount with that event; 2.0 doesn't. It uses an app-instance ID and, on Android, may use the advertising ID. We use these statistics only as totals, to see which parts of the app are used and to fix problems.</p>
+    <p>Firebase Analytics (Google) receives app opens, sessions and a few events, such as "a win was found" with the game's name, never your numbers. For scans, it also counts whether your phone's reading and the AI's reading agreed, never the numbers or the photo. Versions before 2.0 also sent the smallest possible prize amount with that event; 2.0 doesn't. It uses an app-instance ID and, on Android, may use the advertising ID. We use these statistics only as totals, to see which parts of the app are used and to fix problems.</p>
 
     <h3>Ads</h3>
     <p>The app shows ads from Google AdMob. AdMob collects the advertising ID and app set ID, approximate location from your IP address, device information, and how you interact with ads. It uses them to show and measure ads and to prevent fraud.</p>
@@ -97,10 +98,10 @@
     <table>
       <thead><tr><th scope="col">Who</th><th scope="col">What</th><th scope="col">Why</th></tr></thead>
       <tbody>
-        <tr><td>Cloudflare (hosts our server)</td><td>IP address; scan photos in transit; daily scan counts (2 days)</td><td>Running the server, limiting use</td></tr>
+        <tr><td>Cloudflare (hosts our server)</td><td>IP address; scan photos in transit; daily scan counts and ad-reward confirmations (2 days)</td><td>Running the server, limiting use</td></tr>
         <tr><td>Anthropic</td><td>Scan photos, while online double-checks are on (on by default on Android, only if you allow it on iPhone)</td><td>Reading the numbers on the ticket</td></tr>
         <tr><td>Google Firebase</td><td>Device token and alert topics, crash reports, usage statistics, installation IDs</td><td>Alerts, fixing crashes, understanding use</td></tr>
-        <tr><td>Google AdMob</td><td>Advertising ID, app set ID, approximate location, device information, ad interactions</td><td>Showing and measuring ads, fraud prevention</td></tr>
+        <tr><td>Google AdMob</td><td>Advertising ID, app set ID, approximate location, device information, ad interactions; if you watch an ad for more scans, the random scan ID and a one-time code</td><td>Showing and measuring ads, fraud prevention</td></tr>
         <tr><td>Meta Audience Network (Android only)</td><td>Advertising and device identifiers, IP address, device and app information, ad interactions</td><td>Selecting, showing and measuring ads, fraud prevention</td></tr>
         <tr><td>Google ML Kit</td><td>Runs on your phone; may send Google basic performance and device data</td><td>Reading tickets on the phone</td></tr>
       </tbody>
@@ -110,7 +111,7 @@
     <h2>How long data is kept</h2>
     <ul>
       <li>On your phone: until you delete it or uninstall the app.</li>
-      <li>Our server: no personal data is stored, apart from the daily scan counts, which are deleted after 2 days.</li>
+      <li>Our server: no personal data is stored, apart from the daily scan counts and ad-reward confirmations, which are deleted after 2 days.</li>
       <li>Anthropic: scan photos are deleted within 30 days, unless flagged as described above.</li>
       <li>Google: according to Google's own retention settings and policies.</li>
       <li>Meta Audience Network on Android: according to Meta's own retention policies.</li>
