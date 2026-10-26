@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
 /* Pick the right download option before anything paints:
-   Android gets the Play button, iPhone gets a note, desktop gets a QR code. */
+   Android gets the Play button, iPhone the App Store badge, desktop a QR code. */
 (function () {
   var u = navigator.userAgent || "", d = "desktop";
   if (/Android/i.test(u)) d = "android";
@@ -14,7 +14,7 @@
 })();
 </script>
 <title>DrawWatch: scan your lottery ticket and see what it won</title>
-<meta name="description" content="Scan a Powerball, Mega Millions, Lotto America or Millionaire for Life ticket. DrawWatch checks it against every draw it's in and shows what each line won. Free for Android, no account.">
+<meta name="description" content="Scan a Powerball, Mega Millions, Lotto America or Millionaire for Life ticket. DrawWatch checks it against every draw it's in and shows what each line won. Free for Android and iPhone, no account.">
 <meta name="author" content="E4 Developers">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#F5F5F2">
@@ -41,7 +41,7 @@
   "@context": "https://schema.org",
   "@type": "MobileApplication",
   "name": "DrawWatch: Lottery Checker",
-  "operatingSystem": "Android",
+  "operatingSystem": "Android, iOS",
   "applicationCategory": "EntertainmentApplication",
   "description": "Scan a Powerball, Mega Millions, Lotto America or Millionaire for Life ticket. DrawWatch checks it against every draw it's in and shows what each line won.",
   "url": "https://e4developers.github.io/drawwatch.html",
@@ -60,7 +60,7 @@
     { "@type": "Question", "name": "Can I buy lottery tickets in DrawWatch?", "acceptedAnswer": { "@type": "Answer", "text": "No. DrawWatch only checks tickets you already bought from a lottery retailer. It doesn't sell tickets or take bets." } },
     { "@type": "Question", "name": "Are the prize amounts official?", "acceptedAnswer": { "@type": "Answer", "text": "DrawWatch shows each game's standard prizes, including Power Play, the Mega Millions multiplier, All Star Bonus and Double Play. Some prizes, and every prize in California, are pari-mutuel and can differ. Always confirm a win with your state lottery." } },
     { "@type": "Question", "name": "What happens to my ticket photos?", "acceptedAnswer": { "@type": "Answer", "text": "Your phone reads the photo. Unless you turn it off, a smaller copy is double-checked by an AI service and isn't kept by us. You can choose to read on your phone only." } },
-    { "@type": "Question", "name": "Is DrawWatch on iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Not yet. DrawWatch is on Android today, and an iPhone version is on the way." } }
+    { "@type": "Question", "name": "Is DrawWatch on iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. DrawWatch is free on Android and iPhone." } }
   ]
 }
 </script>
@@ -75,7 +75,7 @@
       <a class="hide-sm" href="#tour">Tour</a>
       <a class="hide-sm" href="#facts">Games</a>
       <a class="hide-sm" href="#faq">FAQ</a>
-      <a class="get" href="https://play.google.com/store/apps/details?id=com.numcheck.app&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dheader" rel="noopener">Get the app</a>
+      <a class="get" href="get?c=website_header" rel="noopener">Get the app</a>
     </nav>
   </div>
 </header>
@@ -94,17 +94,15 @@
         </div>
         <div class="get-block for-desktop">
           <div class="qr">
-            <img src="img/drawwatch/qr-play.svg" alt="QR code that opens DrawWatch on Google Play" width="112" height="112">
-            <div><strong>Scan with your phone</strong><span>Point your Android phone's camera here to open DrawWatch on Google Play.</span></div>
+            <img src="img/drawwatch/qr-get.svg" alt="QR code that opens DrawWatch in your phone's app store" width="112" height="112">
+            <div><strong>Scan with your phone</strong><span>Point your phone's camera here to get DrawWatch for Android or iPhone.</span></div>
           </div>
           <a class="badge" href="https://play.google.com/store/apps/details?id=com.numcheck.app&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbutton" rel="noopener"><img src="img/drawwatch/google-play-badge.png" alt="Get it on Google Play" width="564" height="168"></a>
+          <a class="badge apple" href="https://apps.apple.com/us/app/id6760988938?ct=website_desktop" rel="noopener"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" width="120" height="40"></a>
         </div>
         <div class="get-block for-ios">
-          <div class="ios-note">
-            <strong>DrawWatch is on Android today.</strong>
-            <span>An iPhone version is on the way.</span>
-            <a href="mailto:lottocheckerabc@gmail.com?subject=Tell%20me%20when%20DrawWatch%20is%20on%20iPhone">Email me when it's on iPhone</a>
-          </div>
+          <a class="badge apple" href="https://apps.apple.com/us/app/id6760988938?ct=website_hero" rel="noopener"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" width="120" height="40"></a>
+          <span class="cta-note">Free with ads. No account.</span>
         </div>
 
         <div class="games-line" aria-label="Games">
@@ -201,7 +199,7 @@
         <details><summary>Are the prize amounts official?</summary><div><p>DrawWatch shows each game's standard prizes, including Power Play, the Mega Millions multiplier, All Star Bonus and Double Play. Some prizes, and every prize in California, are pari-mutuel and can differ. Always confirm a win with your state lottery before you throw a ticket away.</p></div></details>
         <details><summary>Which states does it work in?</summary><div><p>Anywhere these games are sold. Double Play and All Star Bonus are only offered in some states.</p></div></details>
         <details><summary>What happens to my ticket photos?</summary><div><p>Your phone reads the photo. Unless you turn it off, a smaller copy is sent to an AI service (Anthropic) to double-check the numbers. We don't keep it, and you can switch to reading on your phone only at any time. See the <a href="privacy-policy.html">privacy policy</a>.</p></div></details>
-        <details><summary>Is DrawWatch on iPhone?</summary><div><p>Not yet. DrawWatch is on Android today, and an iPhone version is on the way.</p></div></details>
+        <details><summary>Is DrawWatch on iPhone?</summary><div><p>Yes. DrawWatch is free on Android and iPhone.</p></div></details>
         <details><summary>Where can I get help with gambling?</summary><div><p>If gambling stops being fun, free and confidential help is available. Call or text 1-800-GAMBLER.</p></div></details>
       </div>
     </div></div>
@@ -220,17 +218,14 @@
         </div>
         <div class="get-block for-desktop">
           <div class="qr">
-            <img src="img/drawwatch/qr-play.svg" alt="QR code that opens DrawWatch on Google Play" width="112" height="112" loading="lazy">
-            <div><strong>Scan with your phone</strong><span>Opens DrawWatch on Google Play.</span></div>
+            <img src="img/drawwatch/qr-get.svg" alt="QR code that opens DrawWatch in your phone's app store" width="112" height="112" loading="lazy">
+            <div><strong>Scan with your phone</strong><span>Opens DrawWatch on Android or iPhone.</span></div>
           </div>
           <a class="badge" href="https://play.google.com/store/apps/details?id=com.numcheck.app&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbutton" rel="noopener"><img src="img/drawwatch/google-play-badge.png" alt="Get it on Google Play" width="564" height="168" loading="lazy"></a>
+          <a class="badge apple" href="https://apps.apple.com/us/app/id6760988938?ct=website_desktop" rel="noopener"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" width="120" height="40"></a>
         </div>
         <div class="get-block for-ios">
-          <div class="ios-note">
-            <strong>On Android today.</strong>
-            <span>An iPhone version is on the way.</span>
-            <a href="mailto:lottocheckerabc@gmail.com?subject=Tell%20me%20when%20DrawWatch%20is%20on%20iPhone">Email me when it's on iPhone</a>
-          </div>
+          <a class="badge apple" href="https://apps.apple.com/us/app/id6760988938?ct=website_closing" rel="noopener"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" width="120" height="40" loading="lazy"></a>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@
    App Store (to the landing page until the iPhone app is out), desktop to the
    landing page's QR code. CODE is letters, digits, _ and - only. */
 (function () {
-  var IOS_LIVE = false;   // true the hour the App Store releases DrawWatch
+  var IOS_LIVE = true;    // the App Store released DrawWatch
   var m = /[?&]c=([A-Za-z0-9_-]{1,40})/.exec(location.search);
   var c = m ? m[1] : "get";
   var u = navigator.userAgent || "";

@@ -71,7 +71,6 @@ html[data-device="desktop"] .for-desktop { display: flex; }
 .top .get { color: var(--on-green); background: var(--green); padding: 9px 16px; border-radius: 999px; font-weight: 700; }
 .top .get:hover { color: var(--on-green); background: #7AF5BA; }
 @media (max-width: 700px) { .top nav .hide-sm { display: none; } }
-html[data-device="ios"] .top .get { display: none; }
 
 /* Lottery balls */
 .ball {
@@ -92,6 +91,8 @@ html[data-device="ios"] .top .get { display: none; }
 /* Store badge and the download block */
 .badge { display: inline-block; line-height: 0; border-radius: 10px; }
 .badge img { height: 56px; width: auto; }
+/* Apple's badge has no built-in margin; Google's PNG has about 8px. */
+.badge.apple img { height: 46px; margin: 5px 0; }
 .get-block { align-items: center; gap: 18px 22px; flex-wrap: wrap; margin-top: 32px; }
 .qr { display: flex; align-items: center; gap: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 14px 18px 14px 14px; }
 .qr img { width: 112px; height: 112px; }

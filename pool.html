@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
 /* Same device switch as drawwatch.html: Android gets the Play button,
-   iPhone gets a note, desktop is told to open the link on the phone. */
+   iPhone gets the App Store badge, desktop is told to open the link on the phone. */
 (function () {
   var u = navigator.userAgent || "", d = "desktop";
   if (/Android/i.test(u)) d = "android";
@@ -52,15 +52,12 @@
       <a class="badge" href="https://play.google.com/store/apps/details?id=com.numcheck.app&amp;referrer=utm_source%3Dpool_invite%26utm_medium%3Dpool_page" rel="noopener"><img src="img/drawwatch/google-play-badge.png" alt="Get it on Google Play" width="564" height="168"></a>
     </div>
     <div class="get-block for-ios">
-      <div class="ios-note">
-        <strong>DrawWatch is on Android today.</strong>
-        <span>An iPhone version is on the way.</span>
-      </div>
+      <a class="badge apple" href="https://apps.apple.com/us/app/id6760988938?ct=pool_invite" rel="noopener"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" width="120" height="40"></a>
     </div>
     <div class="get-block for-desktop">
       <div class="ios-note">
         <strong>Open this link on your phone.</strong>
-        <span>The pool opens in DrawWatch for Android.</span>
+        <span>The pool opens in DrawWatch for Android or iPhone.</span>
       </div>
     </div>
 
