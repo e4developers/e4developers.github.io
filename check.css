@@ -35,6 +35,15 @@
 .draws li.won .r { color: var(--money); font-weight: 700; }
 .ball.miss { opacity: 0.35; box-shadow: none; }
 
+.check-pays { padding: 16px 0 8px; }
+.check-pays h2 { font-size: clamp(24px, 3vw, 32px); }
+.pays { width: 100%; max-width: 560px; border-collapse: collapse; margin-top: 14px; }
+.pays th, .pays td { text-align: left; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+.pays thead th { color: var(--muted); font-size: 14px; font-weight: 500; }
+.pays tbody th { color: var(--text-soft); font-weight: 400; }
+.pays td { color: var(--text); font-weight: 700; text-align: right; }
+.pays thead th:last-child { text-align: right; }
+
 .check-cta { padding: 40px 0 56px; }
 .check-cta .box { display: grid; gap: 12px; }
 .check-cta h2 { font-size: clamp(24px, 3vw, 32px); }
